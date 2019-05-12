@@ -6,3 +6,10 @@ Technologies used:
  - [Greensocks](https://github.com/greensock/GreenSock-JS)
  - [Three.js](https://threejs.org/)
  - [Google Map API](https://github.com/googlemaps/v3-utility-library)
+
+ To run on your local, clone this repository and then run following commands in your shell.
+ ```sh
+ $ npm install
+ $ webpack
+ $ npm run local
+ ```
