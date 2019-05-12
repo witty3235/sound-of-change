@@ -1,5 +1,6 @@
 # Sound of Change website
-This is the frontend code of the [Sound of Change](www.sound-of-change.com) website.
+This is the frontend code of the [Sound of Change](http://www.sound-of-change.com) website.
+It was picked as the Site of the day by [Awwwards](https://www.awwwards.com/) on Mar 09, 2016.
 
 Technologies used:
  - [Angular.js](https://angularjs.org)
