@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/"
+    xmlns:fb="http://developers.facebook.com/schema/" lang="{{ lang }}" ng-app="app">
+
+<head>
+    <base href="/themes/frontend/">
+    <title translate="page_title">Sound of Change – Supporting Buskers Beyond The Streets</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content name="keywords">
+    <meta
+        content="Sound of Change is the new record label, which gives buskers the opportunity to have their music recorded in a studio and listeners the world over, to help them make money beyond the streets."
+        name="description">
+    <meta viewport="width=1200px">
+    <meta name="viewport" content="width=1200">
+    <meta property="og:title" content="STREET MUSIC LABEL">
+    <meta property="og:description"
+        content="The music of a busker doesn't leave the confines of a street. Sound of Change makes street music heard by listeners from all over the world. When you buy a song on this site you're tossing the busker a few coins – just like in the street.">
+    <meta property="og:image" content="http://sound-of-change.com/themes/frontend/img/share.jpg">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="fonts/fonts.css" media="all">
+    <link rel="stylesheet" href="css/all.css" media="all">
+</head>
+
+<body>
+    <div id="WebGL-output"></div>
+    <div id="root" class="state-{{data.stateIndex}}"
+        ng-class="{'is-inversed' : inverseColors, 'beeline-shown': beelineShown}">
+        <div id="main-menu"><button class="btn btn-menu"><i class="icon icon-menu"></i></button> <button
+                class="btn btn-close"></button>
+            <nav>
+                <ul>
+                    <li><a ui-sref="root">{{ 'menu_home' | translate }}</a></li>
+                    <li><a ui-sref="root.Intro">{{ 'menu_intro' | translate }}</a></li>
+                    <li><a ui-sref="root.Buskers">{{ 'menu_buskers' | translate }}</a></li>
+                    <li><a ui-sref="root.AddMusician">{{ 'menu_add-musician' | translate }}</a></li>
+                    <li><a ui-sref="root.Map">{{ 'menu_map' | translate }}</a></li>
+                    <li><a ui-sref="root.Feedback">{{ 'menu_feedback' | translate }}</a></li>
+                    <li><span ng-click="openBeeline()">{{ 'menu_hd-voice' | translate }}</span></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-logo"><a ui-sref="root"></a></div>
+        <div id="wrapper" ui-view="screen"></div>
+        <footer id="footer">
+            <div class="socials"><a target="_blank" href="https://www.facebook.com/soundofchange"><i
+                        class="icon icon-fb"></i><i class="icon icon-fb-gray"></i></a><a target="_blank"
+                    href="https://www.instagram.com/sound.of.change/"><i class="icon icon-inst"></i><i
+                        class="icon icon-inst-gray"></i></a> <a href="mailto:hello@sound-of-change.com"><i
+                        class="icon icon-email"></i><i class="icon icon-email-gray"></i></a></div>
+            <div class="dev">
+                <div ng-controller="LanguageSwitchController" class="langSwitch"><button ng-show="lang == 'en'"
+                        ng-click="changeLanguage('ru')" translate="BUTTON_LANG_RU"></button> <button
+                        ng-show="lang == 'ru'" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
+                </div>
+                <div><button class="btn btn-eq" ng-class="{'muted': soundMuted}" ng-click="toggleMuteSound()"></button>
+                </div>
+            </div>
+            <div class="scroll-down" ng-class="{'is-hidden': hideScrollDown}">
+                <div>
+                    <div>{{ 'SCROLL_DOWN' | translate }}</div>
+                    <div>{{ 'SCROLL_DOWN' | translate }}</div>
+                </div>
+            </div>
+        </footer>
+        <div class="beeline-popup popup"><button class="btn btn-close" ng-click="closeBeeline()"></button>
+            <div class="popup-content">
+                <div class="title"><img ng-show="lang == 'en'" src="img/beeline-biglogo-en.png"> <img
+                        ng-show="lang == 'ru'" src="img/beeline-biglogo-ru.png"></div>
+                <div class="text" ng-bind-html="'beeline_text' | translate | htmlSafe"></div>
+                <div class="btn-wrap"><a href="http://www.beeline.ru/hd-voice"
+                        class="btn btn-custom"><span>{{ 'beeline_btn' | translate }}</span></a></div>
+            </div>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r73/three.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenLite.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineLite.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/easing/EasePack.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSPlugin.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3"></script>
+    <script type="text/javascript" src="https://googlemaps.github.io/js-info-bubble/src/infobubble.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markerclustererplus/2.1.4/markerclusterer.min.js" integrity="sha256-k6ny1ynyuFwRCbNHPHfWZNNWXGLmz5+AN9AZPAa4zeA=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate.min.js" integrity="sha256-aOs2ICGLk6gC0UX7UDhvXn/gvsa2qx5bUipyQFKmoOs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js" integrity="sha256-UMkoR69dDThPgvGlbSCz9h+u7ZN6Lakj9IeMpGO1+L4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js" integrity="sha256-gNWVOpsca2V2rw+YazZXQWuvL9CIpnbGYXmuXVDvUC8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate-storage-local/angular-translate-storage-local.min.js" integrity="sha256-dQs9cbIoHo1JRGEtdKyHyW9xwwfgGAZW3ogdkE7IhZc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.3/angular-ui-router.min.js" integrity="sha256-OWxK09bEp45HspodjlJryDpyth6tGxSyl3Uq8uirEAU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js" integrity="sha256-H9uyGASW/KUy9D3q/+yHn4ymmQJYs4pGmu1BINbA0v4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.2.5/svg.min.js" integrity="sha256-Zjc1FwkNpvEyxV2KsgwrjISPdiaYFpPf213JxB4TOgs=" crossorigin="anonymous"></script>
+
+    <script src="js/vz.js"></script>
+    <script src="js/all.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-74704208-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

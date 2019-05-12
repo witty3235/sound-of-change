@@ -1,0 +1,71 @@
+<div class="screen screen-feedback"
+    ng-class="{'form-shown': showForm, 'success-shown': successShown, 'additional-shown': additionalShown}">
+    <div class="title">
+        <div>
+            <h2>{{ 'become_a_part_of' | translate }}<br>Sound of Change</h2>
+            <p>{{ 'become_a_part_of__str_1' | translate }}<br>{{ 'become_a_part_of__str_2' | translate }}<br>{{ 'become_a_part_of__str_3' | translate }}
+            </p>
+        </div>
+    </div>
+    <div class="form">
+        <form autocomplete="off" name="feedbackForm" ng-submit="feedbackForm.$valid && processForm()" novalidate>
+            <div class="input"
+                ng-class="{'has-error': feedbackForm.fullname.$invalid && (feedbackForm.fullname.$touched || feedbackForm.$submitted)}">
+                <input type="text" name="fullname" placeholder="{{ 'form_full-name' | translate }}" autocomplete="off"
+                    ng-model="formData.fullname" required>
+                <hr>
+            </div>
+            <div class="input"><input type="text" name="country" placeholder="{{ 'form_country' | translate }}"
+                    autocomplete="off" ng-model="formData.country">
+                <hr>
+            </div>
+            <div class="input"><input type="text" name="city" placeholder="{{ 'form_city' | translate }}"
+                    autocomplete="off" ng-model="formData.city">
+                <hr>
+            </div>
+            <div class="input"><input type="text" name="phone" placeholder="{{ 'form_phone-number' | translate }}"
+                    autocomplete="off" ng-model="formData.phone">
+                <hr>
+            </div>
+            <div class="input"
+                ng-class="{'has-error': feedbackForm.email.$invalid && (feedbackForm.email.$touched || feedbackForm.$submitted)}">
+                <input type="email" name="email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" placeholder="E-mail"
+                    autocomplete="off" ng-model="formData.email" required>
+                <hr>
+            </div>
+            <div class="input"><input type="text" name="participation" placeholder="{{ 'form_options' | translate }}"
+                    autocomplete="off" ng-model="formData.participation">
+                <hr>
+            </div>
+            <div class="info"><a ng-click="openAdditional()">{{ 'form_additional' | translate }}</a>
+                <hr>
+            </div>
+            <div class="btn-wrap"><button ng-disabled="loading"><i class="icon icon-loader"></i>
+                    <span>{{ 'join' | translate }}</span></button></div>
+        </form>
+    </div>
+    <div class="success-popup popup"><button class="btn btn-close" ng-click="closePopup()"></button>
+        <div>
+            <div class="title">
+                <h2>{{ 'thank_you_for_supporting' | translate }}<br>Sound of Change!</h2>
+                <p>{{ 'thank_you_for_supporting_str_1' | translate }}<br>{{ 'thank_you_for_supporting_str_2' | translate }}<br>{{ 'thank_you_for_supporting_str_3' | translate }}
+                </p>
+            </div>
+            <div class="btn-wrap"><button class="btn btn-custom"
+                    ui-sref="root.Intro"><span>{{ 'back_to_intro' | translate }}</span></button> <button
+                    class="btn btn-custom"
+                    ui-sref="root.Buskers"><span>{{ 'back_to_musician' | translate }}</span></button></div>
+        </div>
+    </div>
+    <div class="additional-popup popup"><button class="btn btn-close" ng-click="closePopup()"></button>
+        <div>
+            <div class="title">
+                <h2>{{ 'become_a_part_of' | translate }}<br>Sound of Change</h2>
+                <h3>{{ 'form_additional' | translate }}</h3>
+            </div>
+            <div class="input"><textarea name="addinfo" autocomplete="off" ng-model="formData.addinfo"></textarea></div>
+            <div class="btn-wrap"><button class="btn btn-custom"
+                    ng-click="closePopup()"><span>{{ 'done' | translate }}</span></button></div>
+        </div>
+    </div>
+</div>

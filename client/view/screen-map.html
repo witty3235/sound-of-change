@@ -1,0 +1,10 @@
+<div class="screen screen-map">
+    <div id="map" width="100%" height="100%"></div>
+    <div class="title" ng-show="counter > 0">
+        <h2><span ng-bind="counter"></span><br><span ng-show="lang == 'en'">{{ 'musicians' | translate }}</span> <span
+                ng-show="lang == 'ru'" ng-bind="counter_txt">{{counter_txt}}</span></h2>
+        <p>{{ 'all_over' | translate }}<br>{{ 'the_world' | translate }}</p>
+    </div>
+    <div class="controls"><button class="btn btn-map-zoomin"></button> <button class="btn btn-map-zoomout"></button>
+    </div>
+</div>

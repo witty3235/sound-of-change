@@ -1,0 +1,895 @@
+<script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
+<div class="screen screen-artists">
+    <div class="b_artist_video">
+        <div id="ytplayer"></div>
+        <div class="b_artist_video_data">
+            <div class="b_artist_from"></div>
+            <div class="b_artist_name"></div>
+        </div>
+        <div class="b_artist_video_YT_fix"></div>
+        <div class="b_artist_video_controls">
+            <div class="b_artist_video_controls_preloader"><span></span> <span></span> <span></span></div>
+            <div class="b_artist_video_controls_inset">
+                <div class="draggable_wp">
+                    <div class="el"></div>
+                    <div class="handle"></div>
+                </div><input type="range" id="video_seek" value="0"><svg version="1.1" fill="none" stroke="#ffffff"
+                    stroke-width="2" stroke-miterlimit="10" id="svg_seek" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                    style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                    <path d="M145.9,1C65.9,1,1,65.9,1,146c0,80.1,64.9,145,145,145s144-64.9,144-145S226.1,1,145.9,1">
+                    </path>
+                </svg><svg version="1.1" id="svg_dots_inset" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                    style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                    <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+                </svg>
+            </div>
+            <div class="b_artist_video_controls_outset"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                    style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                    <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+                </svg></div>
+            <div class="b_artist_video_controls_outset2"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                    style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                    <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+                </svg></div>
+            <div class="b_artist_video_controls_close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 23 23"
+                    style="enable-background:new 0 0 23 23;" xml:space="preserve">
+                    <polygon
+                        points="23,0.7 22.3,0 11.5,10.8 0.7,0 0,0.7 10.8,11.5 0,22.3 0.7,23 11.5,12.2 22.3,23 23,22.3 12.2,11.5">
+                    </polygon>
+                </svg></div>
+            <div class="b_artist_video_controls_pause"><svg version="1.1" id="svg_play_btn"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewbox="0 0 56 65" style="enable-background:new 0 0 56 65;" xml:space="preserve">
+                    <path d="M0,0v65l56-32.5L0,0z M6,10.4l38,22.1L6,54.6V10.4z"></path>
+                </svg></div>
+            <div class="b_artist_video_controls_timing"></div>
+        </div>
+    </div>
+    <div class="b_artist b_artist_1">
+        <div class="b_artist_share">
+            <div class="ya-share2" data-services="facebook,twitter"
+                data-description="{{ 'share_description' | translate }}"
+                data-image="http://sound-of-change.com/themes/frontend/share_img/fb_1.jpg" data-lang="en"
+                data-title="FER CRUZ" data-url="http://sound-of-change.com/#/buskers/1"></div>
+            <div class="b_artist_share_icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="-9 9 20 24"
+                    style="enable-background:new -9 9 20 24;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0qweqwe {
+                            opacity: 0.5;
+                            fill: #959595;
+                            enable-background: new;
+                        }
+                    </style>
+                    <path class="st0qweqwe"
+                        d="M8,27c-0.9,0-1.8,0.4-2.3,1.1l-9.3-5.4C-3.2,22.3-3,21.7-3,21c0-0.5-0.1-1-0.4-1.4l9.3-5.4c0,0,0,0,0,0 c0,0,0,0,0,0C6.5,14.7,7.2,15,8,15c1.7,0,3-1.3,3-3S9.7,9,8,9s-3,1.3-3,3c0,0.4,0.1,0.8,0.3,1.2l-9.4,5.4C-4.7,18.2-5.3,18-6,18 c-1.7,0-3,1.3-3,3s1.3,3,3,3c0.5,0,1-0.2,1.5-0.4l9.6,5.6C5.1,29.4,5,29.7,5,30c0,1.7,1.3,3,3,3s3-1.3,3-3S9.7,27,8,27z">
+                    </path>
+                </svg></div>
+        </div>
+        <div class="b_artist_video_controls_inset"><svg version="1.1" id="svg_dots_inset"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewbox="0 0 292 292" style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_video_controls_outset"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_video_controls_outset2"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_data">
+            <div class="artists-counter"><span>1</span>
+                <div></div><span>5</span>
+            </div>
+            <div class="b_artist_name"></div>
+            <div class="b_artist_from"></div>
+            <div class="b_artist_itunes"><a href="#" class="player" pid="1"><audio id="artist1-music" controls
+                        volume="0.7">
+                        <source src="/themes/frontend/uploads/fer.ogg" type="audio/ogg">
+                        <source src="/themes/frontend/uploads/fer.mp3" type="audio/mpeg"></audio><svg
+                        class="player-play" xmlns="http://www.w3.org/2000/svg" width="23.031" height="25"
+                        viewbox="0 0 23.031 25">
+                        <defs>
+                            <style>
+                                .player-play-path {
+                                    fill: none;
+                                    fill-opacity: 0;
+                                    stroke: #fff;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1px;
+                                    fill-rule: evenodd;
+                                }
+                            </style>
+                        </defs>
+                        <path class="player-play-path" d="M140,505.985L162.027,518,140,530.015v-24.03Z"
+                            transform="translate(-139.5 -505.5)"></path>
+                    </svg><svg class="player-out" xmlns="http://www.w3.org/2000/svg" width="57" height="57"
+                        viewbox="0 0 57 57">
+                        <defs>
+                            <style>
+                                .player-out-path {
+                                    fill: none;
+                                    fill-opacity: 0;
+                                    stroke: #636363;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1px;
+                                }
+                            </style>
+                        </defs>
+                        <circle class="player-out-path" cx="28.5" cy="28.5" r="26"></circle>
+                    </svg><svg style="stroke-dasharray: 0; stroke-dashoffset: 0; stroke-width:0px;"
+                        class="player-update" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="9 -8 57 57"
+                        xml:space="preserve">
+                        <style type="text/css">
+                            .player-update-path {
+                                fill: none;
+                                fill-opacity: 0;
+                                stroke: #FFFFFF;
+                                stroke-linejoin: round;
+                            }
+                        </style>
+                        <path class="player-update-path"
+                            d="M37.5-5.5c-14.3,0.1-26,11.7-26,26c0,14.4,11.6,26,26,26c14.4,0,26-11.6,26-26C63.5,6.2,51.8-5.4,37.5-5.5">
+                        </path>
+                    </svg></a> <a href="#" target="_blank" class="itunes"><svg version="1.1" id="svg_itunes"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewbox="0 0 108 28" style="enable-background:new 0 0 108 28;" xml:space="preserve">
+                        <path id="apple_part_2"
+                            d="M18.8,14.7c0-3.2,2.6-4.8,2.8-4.9c-1.5-2.2-3.9-2.5-4.7-2.5c-2-0.2-3.9,1.2-4.9,1.2c-1,0-2.6-1.2-4.2-1.1c-2.1,0-4.2,1.3-5.3,3.2c-2.3,3.9-0.6,9.7,1.6,12.8c1.1,1.6,2.4,3.3,4,3.2c1.6-0.1,2.2-1,4.2-1c1.9,0,2.5,1,4.2,1c1.8,0,2.9-1.6,3.9-3.1c1.3-1.8,1.8-3.5,1.8-3.6C22.2,19.9,18.9,18.6,18.8,14.7z">
+                        </path>
+                        <path id="apple_part_1"
+                            d="M15.6,5.3c0.9-1.1,1.5-2.6,1.3-4.1c-1.3,0.1-2.9,0.9-3.8,1.9c-0.8,0.9-1.5,2.5-1.3,3.9C13.2,7.2,14.7,6.4,15.6,5.3z">
+                        </path>
+                        <g id="itunes_text">
+                            <path
+                                d="M35.8,9.2c0,0.5-0.2,1-0.5,1.3C35,10.8,34.5,11,34,11c-0.5,0-0.9-0.2-1.2-0.5c-0.3-0.3-0.5-0.8-0.5-1.3 c0-0.5,0.2-0.9,0.5-1.3c0.3-0.3,0.8-0.5,1.3-0.5c0.5,0,0.9,0.2,1.3,0.5C35.7,8.3,35.8,8.7,35.8,9.2z M35.5,26.4h-3V13.2h3V26.4z">
+                            </path>
+                            <path d="M51.4,10.5h-5.3v15.9h-3V10.5h-5.3V8h13.5L51.4,10.5L51.4,10.5z"></path>
+                            <path
+                                d="M63.7,26.4h-2.6l-0.2-2h-0.1c-0.9,1.6-2.3,2.3-4.2,2.3c-1.3,0-2.4-0.4-3.1-1.2c-0.9-1-1.4-2.5-1.4-4.5v-7.8h3v7.3 c0,2.6,0.9,3.8,2.6,3.8c1.3,0,2.2-0.6,2.7-1.9c0.1-0.3,0.2-0.7,0.2-1.1v-8.1h3v9.5C63.6,23.9,63.6,25.1,63.7,26.4z">
+                            </path>
+                            <path
+                                d="M79.3,26.4h-3v-7.6c0-2.4-0.9-3.5-2.7-3.5c-0.9,0-1.6,0.3-2.1,1c-0.5,0.6-0.8,1.4-0.8,2.3v7.9h-3v-9.5c0-1.2,0-2.4-0.1-3.8 h2.6l0.1,2.1h0.1c0.3-0.6,0.9-1.2,1.5-1.6c0.8-0.5,1.7-0.7,2.7-0.7c1.2,0,2.3,0.4,3.1,1.2c1,1,1.5,2.5,1.5,4.4L79.3,26.4L79.3,26.4 z">
+                            </path>
+                            <path
+                                d="M94.3,19.2c0,0.5,0,1-0.1,1.3h-8.9c0,1.3,0.5,2.3,1.3,3c0.7,0.6,1.7,0.9,2.9,0.9c1.3,0,2.5-0.2,3.6-0.6l0.5,2 c-1.3,0.5-2.7,0.8-4.5,0.8c-2.1,0-3.7-0.6-4.9-1.8c-1.2-1.2-1.8-2.8-1.8-4.9c0-2,0.5-3.7,1.6-5c1.2-1.4,2.7-2.1,4.7-2.1 c1.9,0,3.4,0.7,4.3,2.1C93.9,16.1,94.3,17.5,94.3,19.2z M91.5,18.4c0-0.9-0.2-1.6-0.6-2.3c-0.5-0.8-1.3-1.2-2.4-1.2 c-1,0-1.8,0.4-2.4,1.2c-0.5,0.6-0.8,1.4-0.9,2.3L91.5,18.4L91.5,18.4L91.5,18.4z">
+                            </path>
+                            <path
+                                d="M105.8,22.6c0,1.2-0.5,2.2-1.4,3c-0.9,0.7-2.2,1.1-3.8,1.1c-1.5,0-2.8-0.3-3.9-0.9l0.6-2.2c1,0.6,2.1,0.9,3.3,0.9 c1.5,0,2.3-0.6,2.3-1.7c0-0.5-0.2-0.9-0.5-1.2c-0.3-0.3-0.9-0.6-1.8-0.9c-2.4-0.9-3.6-2.2-3.6-3.8c0-1.2,0.4-2.1,1.3-2.9 c0.9-0.8,2-1.1,3.5-1.1c1.3,0,2.4,0.3,3.4,0.8l-0.6,2.1c-0.9-0.5-1.8-0.8-2.7-0.8c-0.6,0-1.1,0.1-1.4,0.4c-0.3,0.3-0.5,0.7-0.5,1.1 c0,0.5,0.2,0.8,0.5,1.1c0.3,0.3,0.9,0.6,1.8,0.9C104.6,19.5,105.8,20.8,105.8,22.6z">
+                            </path>
+                        </g>
+                    </svg></a> <a href="#" target="_blank" class="gplay"><svg version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewbox="0 0 125.7 21" style="enable-background:new 0 0 125.7 21;" xml:space="preserve">
+                        <g id="google_play_buuton_1_">
+                            <g id="Layer_1_xA0_Image_1_">
+                                <image style="overflow:visible;" width="20" height="21" id="Layer_1_xA0_Image"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsSAAALEgHS3X78AAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqFJREFUeNqklctrGlEUxs9MxihB 8xAMImqiZBMJKvgnWLLOwo1WrIUUEqOE0oZSKCWL7loKhW6SbkJWpVkVum2h0JVgoUiCFKFUReob 3xKN03MuGZlYTdLkwEXvdeZ3v3vOd66c2+0+WVhYsIqi+PHs7Oz+4eFhC24R3OrqqjgxMQFWqxWm p6e71Wr1LYIf7+3t9W8C5BUKBRAwk8lAt9tVIPih2Wyu7ezsPLqRwrW1NZHjOKBB4OXlZdDr9TA5 OQn1er2IikO7u7tH1wZ6PB6R53mQQ202GxgMBlAqlQxcKpV+1Wq1AKr+diXQ5/MNFEqDNlhZWQGT ycSANARBgHw+/x1Ve0Oh0M+xwEAgIEqQYajD4QDMJwPSnKLf74uNRuMzgYPBYHFkUegF+pQPUpRI JEgV22DwAs9zGo3mDn7N7u/vfzo4ONBfULixsSHKVQ0fn3LqdDpZoSjQr1AoFNim5/N+q9U6UqlU D7xeb52LRCJjgfK5y+WCmZkZKBaL7ETDgd7tdjqdlwLtdJlCaT0ej8Ps7CwsLi6ONjTPK3A8vQC8 DNrr9QA9CalUaiS02Wzm8Zn1kQrPdxys4cMsdxSVSoWtWSwWNsf8NbHyzzAVb7a3t8V/FA6rLJfL DCbZhgKNTmvNubm5F2j4V+FwuCf9NvLIrPz4PZfLsaPKYVj1Plb0A9pqHT3cHD66IJVfrooinU7D 6enpAEb2UavVX7Ra7V3slD/jOkUgAw/DkskkoAXYOg281n7Mz8/7tra2Tq7qZYE8Je+E4+NjaLfb rFMwR7+NRuM9VPT1urcNUygBY7EYg+l0utLS0lJ4c3Pz/f/ehyyHVMVoNApTU1MtvBCe4xFf+/1+ 8SYXLAFPstms2W63v8OEP8F+7N7mP+WvAAMA7kkBKNdDLuIAAAAASUVORK5CYII=">
+                                </image>
+                            </g>
+                            <path class="st0"
+                                d="M68.4,19.8c-0.6-0.5-1.1-1.3-1.3-1.8l1.9-0.8c0.1,0.2,0.4,0.6,0.6,1c0.5,0.5,1.2,1,1.9,1c0.7,0,1.5-0.4,2-1 c0.4-0.6,0.6-1.2,0.6-2v-0.7c-1.4,1.8-4.4,1.5-6.1-0.4c-1.8-1.9-1.8-5.1,0-7c1.8-1.8,4.4-2,5.9-0.4l0,0V6.9h2v8.9 c0,2.3-0.8,3.6-1.9,4.4c-0.7,0.6-1.8,0.8-2.7,0.8C70.3,20.9,69.2,20.5,68.4,19.8L68.4,19.8z M118.2,20.3L118.2,20.3l2-4.8l-3.6-8.2 h2l2.5,5.8l2.5-5.8h2l-5.5,13H118.2L118.2,20.3z M108.5,15.8L108.5,15.8c-0.6-0.6-0.8-1.4-0.8-2.3c0-0.7,0.2-1.4,0.7-1.9 c0.8-0.8,2-1.2,3.3-1.2c0.8,0,1.5,0.1,2.1,0.5c0-1.4-1.2-2-2.1-2c-0.8,0-1.7,0.5-2,1.3L108,9.5c0.4-0.8,1.3-2.4,3.7-2.4 c1.2,0,2.4,0.4,3.1,1.2c0.7,0.8,1,1.8,1,3.1v5h-2v-0.8c-0.2,0.4-0.7,0.6-1.1,0.8c-0.5,0.2-1.1,0.4-1.7,0.4 C110.2,16.6,109.1,16.4,108.5,15.8L108.5,15.8z M45.2,11.5L45.2,11.5c0-2.4,1.8-5,5-5c3.1,0,5,2.6,5,5s-1.8,5-5,5 C47,16.5,45.2,13.9,45.2,11.5L45.2,11.5z M55.9,11.5L55.9,11.5c0-2.4,1.8-5,5-5c3.1,0,5,2.6,5,5s-1.8,5-5,5 C57.8,16.5,55.9,13.9,55.9,11.5L55.9,11.5z M31.7,14.1L31.7,14.1c-3-3-2.9-7.8,0.1-10.9c1.5-1.5,3.4-2.3,5.5-2.3 c1.9,0,3.8,0.7,5.2,2.1l-1.4,1.5c-2.1-2.1-5.6-2-7.6,0.1c-2.1,2.3-2.1,5.7,0,8c2.1,2.3,5.7,2.4,7.8,0.1c0.7-0.7,1-1.7,1.1-2.6h-5V8 h7c0.1,0.5,0.1,1.1,0.1,1.7c0,1.8-0.7,3.6-1.9,4.8c-1.3,1.3-3.2,2-5.1,2C35.4,16.4,33.3,15.6,31.7,14.1L31.7,14.1z M82,14.9 L82,14.9c-1.8-1.9-1.8-5.1,0-7.1c1.8-1.9,4.8-1.9,6.4,0c0.6,0.6,1,1.4,1.3,2.3l-6.5,2.7c0.4,0.8,1.2,1.5,2.4,1.5 c1.1,0,1.8-0.4,2.5-1.4l1.8,1.2l0,0c-0.2,0.2-0.5,0.5-0.6,0.7C87.3,16.8,83.8,16.8,82,14.9L82,14.9z M94.4,16.4L94.4,16.4V3.2h4.3 c2.5,0,4.5,1.8,4.5,3.9c0,2.1-1.8,3.9-4,3.9h-2.6v5.2h-2.1V16.4z M104.4,16.4L104.4,16.4V3.2h2v13.2H104.4L104.4,16.4z M77.5,16.1 L77.5,16.1V1.4h2.1v14.7H77.5L77.5,16.1z M113.8,12.4L113.8,12.4c-0.5-0.4-1.2-0.5-1.9-0.5c-1.4,0-2.3,0.7-2.3,1.5 c0,0.8,0.8,1.3,1.7,1.3C112.5,14.8,113.8,13.9,113.8,12.4L113.8,12.4z M52.9,11.5L52.9,11.5c0-1.4-1-3-2.7-3c-1.8,0-2.7,1.5-2.7,3 s1,3,2.7,3C51.8,14.5,52.9,12.9,52.9,11.5L52.9,11.5z M63.6,11.5L63.6,11.5c0-1.4-1-3-2.7-3s-2.7,1.5-2.7,3s1,3,2.7,3 S63.6,12.9,63.6,11.5L63.6,11.5z M74.2,12.3L74.2,12.3c0-0.1,0-0.2,0.1-0.4l0,0c0-0.1,0-0.4,0-0.5c0-0.1,0-0.4,0-0.5v-0.1 c0-0.1-0.1-0.4-0.1-0.5c-0.4-1.2-1.4-2-2.5-2c-1.4,0-2.6,1.4-2.6,3c0,1.7,1.2,3,2.7,3C72.8,14.5,73.7,13.6,74.2,12.3L74.2,12.3z M82.9,11.3L82.9,11.3l4.4-1.9c-0.5-0.8-1.2-1.1-1.8-1.1C83.7,8.4,82.6,10.3,82.9,11.3L82.9,11.3z M101.1,7.2L101.1,7.2 c0-1.2-1-2-2.3-2h-2.4v4.2h2.5C100.1,9.3,101.1,8.4,101.1,7.2z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.6,17.9 119.6,17.9 119.6,17.8 119.6,17.8 119.7,17.8 119.7,17.8 119.6,17.8 119.6,17.8 119.6,17.9 119.6,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9 L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9z M119.7,17.8L119.7,17.8L119.7,17.8 L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9 L119.7,17.9z M119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9 119.7,17.9 119.7,17.8">
+                            </polygon>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9 L119.7,17.9z M119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9z">
+                            </path>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9z M119.8,17.8L119.8,17.8L119.8,17.8 L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8z M119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9 L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.9 119.8,17.9">
+                            </polygon>
+                            <polygon class="st0" points="119.8,17.9 119.8,17.9 119.8,17.8 119.8,17.8 119.8,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9 L119.8,17.9L119.8,17.9L119.8,17.9z M119.8,17.8L119.8,17.8C119.8,17.9,119.8,17.9,119.8,17.8C119.8,17.9,119.8,17.9,119.8,17.8 L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8z">
+                            </path>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9z">
+                            </path>
+                            <path class="st0"
+                                d="M120,17.9L120,17.9C120,17.8,120,17.8,120,17.9C119.8,17.8,119.8,17.8,120,17.9L120,17.9 C119.8,17.9,119.8,17.9,120,17.9L120,17.9L120,17.9z M120,17.8L120,17.8C120,17.9,120,17.9,120,17.8C120,17.9,119.8,17.9,120,17.8 L120,17.8C119.8,17.8,120,17.8,120,17.8L120,17.8L120,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="120,17.9 120,17.8 120,17.8 120,17.8 120,17.8 120,17.8 120,17.9 120,17.9 120,17.8 120,17.8 120,17.9 120,17.9 120,17.8 120,17.8">
+                            </polygon>
+                            <path class="st0"
+                                d="M120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9z M120,17.8 L120,17.8L120,17.8L120,17.8L120,17.8L120,17.8L120,17.8z">
+                            </path>
+                            <path class="st0"
+                                d="M120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9 C120,17.8,120,17.8,120,17.9L120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9 C120,17.8,120,17.8,120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9z">
+                            </path>
+                            <polygon class="st0"
+                                points="120.1,17.8 120,17.8 120,17.8 120.1,17.8 120.1,17.9 120.1,17.9 120.1,17.8">
+                            </polygon>
+                            <polygon class="st0"
+                                points="120.1,17.9 120.1,17.9 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M120.1,17.9L120.1,17.9C120.1,17.8,120.1,17.8,120.1,17.9L120.1,17.9C120.1,17.8,120.1,17.8,120.1,17.9 L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9z M120.1,17.8L120.1,17.8L120.1,17.8 L120.1,17.8L120.1,17.8L120.1,17.8L120.1,17.8L120.1,17.8z">
+                            </path>
+                        </g>
+                    </svg></a></div>
+        </div>
+        <div class="b_artist_play"><svg version="1.1" id="svg_play_btn" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 56 65"
+                style="enable-background:new 0 0 56 65;" xml:space="preserve">
+                <path class="st0" d="M0,0v65l56-32.5L0,0z M6,10.4l38,22.1L6,54.6V10.4z"></path>
+            </svg>
+            <div>play video</div>
+        </div>
+    </div>
+    <div class="b_artist b_artist_2">
+        <div class="b_artist_share">
+            <div class="ya-share2" data-services="facebook,twitter"
+                data-description="{{ 'share_description' | translate }}"
+                data-image="http://sound-of-change.com/themes/frontend/share_img/fb_2.jpg" data-lang="en"
+                data-title="SUBTERRANEAN STREET SOCIETY" data-url="http://sound-of-change.com/#/buskers/2"></div>
+            <div class="b_artist_share_icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="-9 9 20 24"
+                    style="enable-background:new -9 9 20 24;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0qweqwe {
+                            opacity: 0.5;
+                            fill: #959595;
+                            enable-background: new;
+                        }
+                    </style>
+                    <path class="st0qweqwe"
+                        d="M8,27c-0.9,0-1.8,0.4-2.3,1.1l-9.3-5.4C-3.2,22.3-3,21.7-3,21c0-0.5-0.1-1-0.4-1.4l9.3-5.4c0,0,0,0,0,0 c0,0,0,0,0,0C6.5,14.7,7.2,15,8,15c1.7,0,3-1.3,3-3S9.7,9,8,9s-3,1.3-3,3c0,0.4,0.1,0.8,0.3,1.2l-9.4,5.4C-4.7,18.2-5.3,18-6,18 c-1.7,0-3,1.3-3,3s1.3,3,3,3c0.5,0,1-0.2,1.5-0.4l9.6,5.6C5.1,29.4,5,29.7,5,30c0,1.7,1.3,3,3,3s3-1.3,3-3S9.7,27,8,27z">
+                    </path>
+                </svg></div>
+        </div>
+        <div class="b_artist_video_controls_inset"><svg version="1.1" id="svg_dots_inset"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewbox="0 0 292 292" style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_video_controls_outset"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_video_controls_outset2"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_data">
+            <div class="artists-counter"><span>2</span>
+                <div></div><span>5</span>
+            </div>
+            <div class="b_artist_name"></div>
+            <div class="b_artist_from"></div>
+            <div class="b_artist_itunes"><a href="#" class="player" pid="2"><audio id="artist2-music" controls
+                        volume="0.7">
+                        <source src="/themes/frontend/uploads/amster.ogg" type="audio/ogg">
+                        <source src="/themes/frontend/uploads/amster.mp3" type="audio/mpeg"></audio><svg
+                        class="player-play" xmlns="http://www.w3.org/2000/svg" width="23.031" height="25"
+                        viewbox="0 0 23.031 25">
+                        <defs>
+                            <style>
+                                .player-play-path {
+                                    fill: none;
+                                    fill-opacity: 0;
+                                    stroke: #fff;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1px;
+                                    fill-rule: evenodd;
+                                }
+                            </style>
+                        </defs>
+                        <path class="player-play-path" d="M140,505.985L162.027,518,140,530.015v-24.03Z"
+                            transform="translate(-139.5 -505.5)"></path>
+                    </svg><svg class="player-out" xmlns="http://www.w3.org/2000/svg" width="57" height="57"
+                        viewbox="0 0 57 57">
+                        <defs>
+                            <style>
+                                .player-out-path {
+                                    fill: none;
+                                    fill-opacity: 0;
+                                    stroke: #636363;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1px;
+                                }
+                            </style>
+                        </defs>
+                        <circle class="player-out-path" cx="28.5" cy="28.5" r="26"></circle>
+                    </svg><svg style="stroke-dasharray: 0; stroke-dashoffset: 0; stroke-width:0px;"
+                        class="player-update" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="9 -8 57 57"
+                        xml:space="preserve">
+                        <style type="text/css">
+                            .player-update-path {
+                                fill: none;
+                                fill-opacity: 0;
+                                stroke: #FFFFFF;
+                                stroke-linejoin: round;
+                            }
+                        </style>
+                        <path class="player-update-path"
+                            d="M37.5-5.5c-14.3,0.1-26,11.7-26,26c0,14.4,11.6,26,26,26c14.4,0,26-11.6,26-26C63.5,6.2,51.8-5.4,37.5-5.5">
+                        </path>
+                    </svg></a> <a href="#" target="_blank" class="itunes"><svg version="1.1" id="svg_itunes"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewbox="0 0 108 28" style="enable-background:new 0 0 108 28;" xml:space="preserve">
+                        <path id="apple_part_2"
+                            d="M18.8,14.7c0-3.2,2.6-4.8,2.8-4.9c-1.5-2.2-3.9-2.5-4.7-2.5c-2-0.2-3.9,1.2-4.9,1.2c-1,0-2.6-1.2-4.2-1.1c-2.1,0-4.2,1.3-5.3,3.2c-2.3,3.9-0.6,9.7,1.6,12.8c1.1,1.6,2.4,3.3,4,3.2c1.6-0.1,2.2-1,4.2-1c1.9,0,2.5,1,4.2,1c1.8,0,2.9-1.6,3.9-3.1c1.3-1.8,1.8-3.5,1.8-3.6C22.2,19.9,18.9,18.6,18.8,14.7z">
+                        </path>
+                        <path id="apple_part_1"
+                            d="M15.6,5.3c0.9-1.1,1.5-2.6,1.3-4.1c-1.3,0.1-2.9,0.9-3.8,1.9c-0.8,0.9-1.5,2.5-1.3,3.9C13.2,7.2,14.7,6.4,15.6,5.3z">
+                        </path>
+                        <g id="itunes_text">
+                            <path
+                                d="M35.8,9.2c0,0.5-0.2,1-0.5,1.3C35,10.8,34.5,11,34,11c-0.5,0-0.9-0.2-1.2-0.5c-0.3-0.3-0.5-0.8-0.5-1.3 c0-0.5,0.2-0.9,0.5-1.3c0.3-0.3,0.8-0.5,1.3-0.5c0.5,0,0.9,0.2,1.3,0.5C35.7,8.3,35.8,8.7,35.8,9.2z M35.5,26.4h-3V13.2h3V26.4z">
+                            </path>
+                            <path d="M51.4,10.5h-5.3v15.9h-3V10.5h-5.3V8h13.5L51.4,10.5L51.4,10.5z"></path>
+                            <path
+                                d="M63.7,26.4h-2.6l-0.2-2h-0.1c-0.9,1.6-2.3,2.3-4.2,2.3c-1.3,0-2.4-0.4-3.1-1.2c-0.9-1-1.4-2.5-1.4-4.5v-7.8h3v7.3 c0,2.6,0.9,3.8,2.6,3.8c1.3,0,2.2-0.6,2.7-1.9c0.1-0.3,0.2-0.7,0.2-1.1v-8.1h3v9.5C63.6,23.9,63.6,25.1,63.7,26.4z">
+                            </path>
+                            <path
+                                d="M79.3,26.4h-3v-7.6c0-2.4-0.9-3.5-2.7-3.5c-0.9,0-1.6,0.3-2.1,1c-0.5,0.6-0.8,1.4-0.8,2.3v7.9h-3v-9.5c0-1.2,0-2.4-0.1-3.8 h2.6l0.1,2.1h0.1c0.3-0.6,0.9-1.2,1.5-1.6c0.8-0.5,1.7-0.7,2.7-0.7c1.2,0,2.3,0.4,3.1,1.2c1,1,1.5,2.5,1.5,4.4L79.3,26.4L79.3,26.4 z">
+                            </path>
+                            <path
+                                d="M94.3,19.2c0,0.5,0,1-0.1,1.3h-8.9c0,1.3,0.5,2.3,1.3,3c0.7,0.6,1.7,0.9,2.9,0.9c1.3,0,2.5-0.2,3.6-0.6l0.5,2 c-1.3,0.5-2.7,0.8-4.5,0.8c-2.1,0-3.7-0.6-4.9-1.8c-1.2-1.2-1.8-2.8-1.8-4.9c0-2,0.5-3.7,1.6-5c1.2-1.4,2.7-2.1,4.7-2.1 c1.9,0,3.4,0.7,4.3,2.1C93.9,16.1,94.3,17.5,94.3,19.2z M91.5,18.4c0-0.9-0.2-1.6-0.6-2.3c-0.5-0.8-1.3-1.2-2.4-1.2 c-1,0-1.8,0.4-2.4,1.2c-0.5,0.6-0.8,1.4-0.9,2.3L91.5,18.4L91.5,18.4L91.5,18.4z">
+                            </path>
+                            <path
+                                d="M105.8,22.6c0,1.2-0.5,2.2-1.4,3c-0.9,0.7-2.2,1.1-3.8,1.1c-1.5,0-2.8-0.3-3.9-0.9l0.6-2.2c1,0.6,2.1,0.9,3.3,0.9 c1.5,0,2.3-0.6,2.3-1.7c0-0.5-0.2-0.9-0.5-1.2c-0.3-0.3-0.9-0.6-1.8-0.9c-2.4-0.9-3.6-2.2-3.6-3.8c0-1.2,0.4-2.1,1.3-2.9 c0.9-0.8,2-1.1,3.5-1.1c1.3,0,2.4,0.3,3.4,0.8l-0.6,2.1c-0.9-0.5-1.8-0.8-2.7-0.8c-0.6,0-1.1,0.1-1.4,0.4c-0.3,0.3-0.5,0.7-0.5,1.1 c0,0.5,0.2,0.8,0.5,1.1c0.3,0.3,0.9,0.6,1.8,0.9C104.6,19.5,105.8,20.8,105.8,22.6z">
+                            </path>
+                        </g>
+                    </svg></a> <a href="#" target="_blank" class="gplay"><svg version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewbox="0 0 125.7 21" style="enable-background:new 0 0 125.7 21;" xml:space="preserve">
+                        <g id="google_play_buuton_1_">
+                            <g id="Layer_1_xA0_Image_1_">
+                                <image style="overflow:visible;" width="20" height="21" id="Layer_1_xA0_Image"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsSAAALEgHS3X78AAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqFJREFUeNqklctrGlEUxs9MxihB 8xAMImqiZBMJKvgnWLLOwo1WrIUUEqOE0oZSKCWL7loKhW6SbkJWpVkVum2h0JVgoUiCFKFUReob 3xKN03MuGZlYTdLkwEXvdeZ3v3vOd66c2+0+WVhYsIqi+PHs7Oz+4eFhC24R3OrqqjgxMQFWqxWm p6e71Wr1LYIf7+3t9W8C5BUKBRAwk8lAt9tVIPih2Wyu7ezsPLqRwrW1NZHjOKBB4OXlZdDr9TA5 OQn1er2IikO7u7tH1wZ6PB6R53mQQ202GxgMBlAqlQxcKpV+1Wq1AKr+diXQ5/MNFEqDNlhZWQGT ycSANARBgHw+/x1Ve0Oh0M+xwEAgIEqQYajD4QDMJwPSnKLf74uNRuMzgYPBYHFkUegF+pQPUpRI JEgV22DwAs9zGo3mDn7N7u/vfzo4ONBfULixsSHKVQ0fn3LqdDpZoSjQr1AoFNim5/N+q9U6UqlU D7xeb52LRCJjgfK5y+WCmZkZKBaL7ETDgd7tdjqdlwLtdJlCaT0ej8Ps7CwsLi6ONjTPK3A8vQC8 DNrr9QA9CalUaiS02Wzm8Zn1kQrPdxys4cMsdxSVSoWtWSwWNsf8NbHyzzAVb7a3t8V/FA6rLJfL DCbZhgKNTmvNubm5F2j4V+FwuCf9NvLIrPz4PZfLsaPKYVj1Plb0A9pqHT3cHD66IJVfrooinU7D 6enpAEb2UavVX7Ra7V3slD/jOkUgAw/DkskkoAXYOg281n7Mz8/7tra2Tq7qZYE8Je+E4+NjaLfb rFMwR7+NRuM9VPT1urcNUygBY7EYg+l0utLS0lJ4c3Pz/f/ehyyHVMVoNApTU1MtvBCe4xFf+/1+ 8SYXLAFPstms2W63v8OEP8F+7N7mP+WvAAMA7kkBKNdDLuIAAAAASUVORK5CYII=">
+                                </image>
+                            </g>
+                            <path class="st0"
+                                d="M68.4,19.8c-0.6-0.5-1.1-1.3-1.3-1.8l1.9-0.8c0.1,0.2,0.4,0.6,0.6,1c0.5,0.5,1.2,1,1.9,1c0.7,0,1.5-0.4,2-1 c0.4-0.6,0.6-1.2,0.6-2v-0.7c-1.4,1.8-4.4,1.5-6.1-0.4c-1.8-1.9-1.8-5.1,0-7c1.8-1.8,4.4-2,5.9-0.4l0,0V6.9h2v8.9 c0,2.3-0.8,3.6-1.9,4.4c-0.7,0.6-1.8,0.8-2.7,0.8C70.3,20.9,69.2,20.5,68.4,19.8L68.4,19.8z M118.2,20.3L118.2,20.3l2-4.8l-3.6-8.2 h2l2.5,5.8l2.5-5.8h2l-5.5,13H118.2L118.2,20.3z M108.5,15.8L108.5,15.8c-0.6-0.6-0.8-1.4-0.8-2.3c0-0.7,0.2-1.4,0.7-1.9 c0.8-0.8,2-1.2,3.3-1.2c0.8,0,1.5,0.1,2.1,0.5c0-1.4-1.2-2-2.1-2c-0.8,0-1.7,0.5-2,1.3L108,9.5c0.4-0.8,1.3-2.4,3.7-2.4 c1.2,0,2.4,0.4,3.1,1.2c0.7,0.8,1,1.8,1,3.1v5h-2v-0.8c-0.2,0.4-0.7,0.6-1.1,0.8c-0.5,0.2-1.1,0.4-1.7,0.4 C110.2,16.6,109.1,16.4,108.5,15.8L108.5,15.8z M45.2,11.5L45.2,11.5c0-2.4,1.8-5,5-5c3.1,0,5,2.6,5,5s-1.8,5-5,5 C47,16.5,45.2,13.9,45.2,11.5L45.2,11.5z M55.9,11.5L55.9,11.5c0-2.4,1.8-5,5-5c3.1,0,5,2.6,5,5s-1.8,5-5,5 C57.8,16.5,55.9,13.9,55.9,11.5L55.9,11.5z M31.7,14.1L31.7,14.1c-3-3-2.9-7.8,0.1-10.9c1.5-1.5,3.4-2.3,5.5-2.3 c1.9,0,3.8,0.7,5.2,2.1l-1.4,1.5c-2.1-2.1-5.6-2-7.6,0.1c-2.1,2.3-2.1,5.7,0,8c2.1,2.3,5.7,2.4,7.8,0.1c0.7-0.7,1-1.7,1.1-2.6h-5V8 h7c0.1,0.5,0.1,1.1,0.1,1.7c0,1.8-0.7,3.6-1.9,4.8c-1.3,1.3-3.2,2-5.1,2C35.4,16.4,33.3,15.6,31.7,14.1L31.7,14.1z M82,14.9 L82,14.9c-1.8-1.9-1.8-5.1,0-7.1c1.8-1.9,4.8-1.9,6.4,0c0.6,0.6,1,1.4,1.3,2.3l-6.5,2.7c0.4,0.8,1.2,1.5,2.4,1.5 c1.1,0,1.8-0.4,2.5-1.4l1.8,1.2l0,0c-0.2,0.2-0.5,0.5-0.6,0.7C87.3,16.8,83.8,16.8,82,14.9L82,14.9z M94.4,16.4L94.4,16.4V3.2h4.3 c2.5,0,4.5,1.8,4.5,3.9c0,2.1-1.8,3.9-4,3.9h-2.6v5.2h-2.1V16.4z M104.4,16.4L104.4,16.4V3.2h2v13.2H104.4L104.4,16.4z M77.5,16.1 L77.5,16.1V1.4h2.1v14.7H77.5L77.5,16.1z M113.8,12.4L113.8,12.4c-0.5-0.4-1.2-0.5-1.9-0.5c-1.4,0-2.3,0.7-2.3,1.5 c0,0.8,0.8,1.3,1.7,1.3C112.5,14.8,113.8,13.9,113.8,12.4L113.8,12.4z M52.9,11.5L52.9,11.5c0-1.4-1-3-2.7-3c-1.8,0-2.7,1.5-2.7,3 s1,3,2.7,3C51.8,14.5,52.9,12.9,52.9,11.5L52.9,11.5z M63.6,11.5L63.6,11.5c0-1.4-1-3-2.7-3s-2.7,1.5-2.7,3s1,3,2.7,3 S63.6,12.9,63.6,11.5L63.6,11.5z M74.2,12.3L74.2,12.3c0-0.1,0-0.2,0.1-0.4l0,0c0-0.1,0-0.4,0-0.5c0-0.1,0-0.4,0-0.5v-0.1 c0-0.1-0.1-0.4-0.1-0.5c-0.4-1.2-1.4-2-2.5-2c-1.4,0-2.6,1.4-2.6,3c0,1.7,1.2,3,2.7,3C72.8,14.5,73.7,13.6,74.2,12.3L74.2,12.3z M82.9,11.3L82.9,11.3l4.4-1.9c-0.5-0.8-1.2-1.1-1.8-1.1C83.7,8.4,82.6,10.3,82.9,11.3L82.9,11.3z M101.1,7.2L101.1,7.2 c0-1.2-1-2-2.3-2h-2.4v4.2h2.5C100.1,9.3,101.1,8.4,101.1,7.2z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.6,17.9 119.6,17.9 119.6,17.8 119.6,17.8 119.7,17.8 119.7,17.8 119.6,17.8 119.6,17.8 119.6,17.9 119.6,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9 L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9z M119.7,17.8L119.7,17.8L119.7,17.8 L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9 L119.7,17.9z M119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9 119.7,17.9 119.7,17.8">
+                            </polygon>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9 L119.7,17.9z M119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9z">
+                            </path>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9z M119.8,17.8L119.8,17.8L119.8,17.8 L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8z M119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9 L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.9 119.8,17.9">
+                            </polygon>
+                            <polygon class="st0" points="119.8,17.9 119.8,17.9 119.8,17.8 119.8,17.8 119.8,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9 L119.8,17.9L119.8,17.9L119.8,17.9z M119.8,17.8L119.8,17.8C119.8,17.9,119.8,17.9,119.8,17.8C119.8,17.9,119.8,17.9,119.8,17.8 L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8z">
+                            </path>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9z">
+                            </path>
+                            <path class="st0"
+                                d="M120,17.9L120,17.9C120,17.8,120,17.8,120,17.9C119.8,17.8,119.8,17.8,120,17.9L120,17.9 C119.8,17.9,119.8,17.9,120,17.9L120,17.9L120,17.9z M120,17.8L120,17.8C120,17.9,120,17.9,120,17.8C120,17.9,119.8,17.9,120,17.8 L120,17.8C119.8,17.8,120,17.8,120,17.8L120,17.8L120,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="120,17.9 120,17.8 120,17.8 120,17.8 120,17.8 120,17.8 120,17.9 120,17.9 120,17.8 120,17.8 120,17.9 120,17.9 120,17.8 120,17.8">
+                            </polygon>
+                            <path class="st0"
+                                d="M120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9z M120,17.8 L120,17.8L120,17.8L120,17.8L120,17.8L120,17.8L120,17.8z">
+                            </path>
+                            <path class="st0"
+                                d="M120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9 C120,17.8,120,17.8,120,17.9L120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9 C120,17.8,120,17.8,120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9z">
+                            </path>
+                            <polygon class="st0"
+                                points="120.1,17.8 120,17.8 120,17.8 120.1,17.8 120.1,17.9 120.1,17.9 120.1,17.8">
+                            </polygon>
+                            <polygon class="st0"
+                                points="120.1,17.9 120.1,17.9 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M120.1,17.9L120.1,17.9C120.1,17.8,120.1,17.8,120.1,17.9L120.1,17.9C120.1,17.8,120.1,17.8,120.1,17.9 L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9z M120.1,17.8L120.1,17.8L120.1,17.8 L120.1,17.8L120.1,17.8L120.1,17.8L120.1,17.8L120.1,17.8z">
+                            </path>
+                        </g>
+                    </svg></a></div>
+        </div>
+        <div class="b_artist_play"><svg version="1.1" id="svg_play_btn" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 56 65"
+                style="enable-background:new 0 0 56 65;" xml:space="preserve">
+                <path class="st0" d="M0,0v65l56-32.5L0,0z M6,10.4l38,22.1L6,54.6V10.4z"></path>
+            </svg>
+            <div>play video</div>
+        </div>
+    </div>
+    <div class="b_artist b_artist_3">
+        <div class="b_artist_share">
+            <div class="ya-share2" data-services="facebook,twitter"
+                data-description="{{ 'share_description' | translate }}"
+                data-image="http://sound-of-change.com/themes/frontend/share_img/fb_3.jpg" data-lang="en"
+                data-title="ZAL JUGLAR" data-url="http://sound-of-change.com/#/buskers/3"></div>
+            <div class="b_artist_share_icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="-9 9 20 24"
+                    style="enable-background:new -9 9 20 24;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0qweqwe {
+                            opacity: 0.5;
+                            fill: #959595;
+                            enable-background: new;
+                        }
+                    </style>
+                    <path class="st0qweqwe"
+                        d="M8,27c-0.9,0-1.8,0.4-2.3,1.1l-9.3-5.4C-3.2,22.3-3,21.7-3,21c0-0.5-0.1-1-0.4-1.4l9.3-5.4c0,0,0,0,0,0 c0,0,0,0,0,0C6.5,14.7,7.2,15,8,15c1.7,0,3-1.3,3-3S9.7,9,8,9s-3,1.3-3,3c0,0.4,0.1,0.8,0.3,1.2l-9.4,5.4C-4.7,18.2-5.3,18-6,18 c-1.7,0-3,1.3-3,3s1.3,3,3,3c0.5,0,1-0.2,1.5-0.4l9.6,5.6C5.1,29.4,5,29.7,5,30c0,1.7,1.3,3,3,3s3-1.3,3-3S9.7,27,8,27z">
+                    </path>
+                </svg></div>
+        </div>
+        <div id="artistbg2"></div>
+        <div class="b_artist_video_controls_inset"><svg version="1.1" id="svg_dots_inset"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewbox="0 0 292 292" style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_video_controls_outset"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_video_controls_outset2"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_data">
+            <div class="artists-counter"><span>3</span>
+                <div></div><span>5</span>
+            </div>
+            <div class="b_artist_name"></div>
+            <div class="b_artist_from"></div>
+            <div class="b_artist_itunes"><a href="#" class="player" pid="3"><audio id="artist3-music" controls
+                        volume="0.7">
+                        <source src="/themes/frontend/uploads/zal.ogg" type="audio/ogg">
+                        <source src="/themes/frontend/uploads/zal.mp3" type="audio/mpeg"></audio><svg
+                        class="player-play" xmlns="http://www.w3.org/2000/svg" width="23.031" height="25"
+                        viewbox="0 0 23.031 25">
+                        <defs>
+                            <style>
+                                .player-play-path {
+                                    fill: none;
+                                    fill-opacity: 0;
+                                    stroke: #fff;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1px;
+                                    fill-rule: evenodd;
+                                }
+                            </style>
+                        </defs>
+                        <path class="player-play-path" d="M140,505.985L162.027,518,140,530.015v-24.03Z"
+                            transform="translate(-139.5 -505.5)"></path>
+                    </svg><svg class="player-out" xmlns="http://www.w3.org/2000/svg" width="57" height="57"
+                        viewbox="0 0 57 57">
+                        <defs>
+                            <style>
+                                .player-out-path {
+                                    fill: none;
+                                    fill-opacity: 0;
+                                    stroke: #636363;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1px;
+                                }
+                            </style>
+                        </defs>
+                        <circle class="player-out-path" cx="28.5" cy="28.5" r="26"></circle>
+                    </svg><svg style="stroke-dasharray: 0; stroke-dashoffset: 0; stroke-width:0px;"
+                        class="player-update" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="9 -8 57 57"
+                        xml:space="preserve">
+                        <style type="text/css">
+                            .player-update-path {
+                                fill: none;
+                                fill-opacity: 0;
+                                stroke: #FFFFFF;
+                                stroke-linejoin: round;
+                            }
+                        </style>
+                        <path class="player-update-path"
+                            d="M37.5-5.5c-14.3,0.1-26,11.7-26,26c0,14.4,11.6,26,26,26c14.4,0,26-11.6,26-26C63.5,6.2,51.8-5.4,37.5-5.5">
+                        </path>
+                    </svg></a> <a href="#" target="_blank" class="itunes"><svg version="1.1" id="svg_itunes"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewbox="0 0 108 28" style="enable-background:new 0 0 108 28;" xml:space="preserve">
+                        <path id="apple_part_2"
+                            d="M18.8,14.7c0-3.2,2.6-4.8,2.8-4.9c-1.5-2.2-3.9-2.5-4.7-2.5c-2-0.2-3.9,1.2-4.9,1.2c-1,0-2.6-1.2-4.2-1.1c-2.1,0-4.2,1.3-5.3,3.2c-2.3,3.9-0.6,9.7,1.6,12.8c1.1,1.6,2.4,3.3,4,3.2c1.6-0.1,2.2-1,4.2-1c1.9,0,2.5,1,4.2,1c1.8,0,2.9-1.6,3.9-3.1c1.3-1.8,1.8-3.5,1.8-3.6C22.2,19.9,18.9,18.6,18.8,14.7z">
+                        </path>
+                        <path id="apple_part_1"
+                            d="M15.6,5.3c0.9-1.1,1.5-2.6,1.3-4.1c-1.3,0.1-2.9,0.9-3.8,1.9c-0.8,0.9-1.5,2.5-1.3,3.9C13.2,7.2,14.7,6.4,15.6,5.3z">
+                        </path>
+                        <g id="itunes_text">
+                            <path
+                                d="M35.8,9.2c0,0.5-0.2,1-0.5,1.3C35,10.8,34.5,11,34,11c-0.5,0-0.9-0.2-1.2-0.5c-0.3-0.3-0.5-0.8-0.5-1.3 c0-0.5,0.2-0.9,0.5-1.3c0.3-0.3,0.8-0.5,1.3-0.5c0.5,0,0.9,0.2,1.3,0.5C35.7,8.3,35.8,8.7,35.8,9.2z M35.5,26.4h-3V13.2h3V26.4z">
+                            </path>
+                            <path d="M51.4,10.5h-5.3v15.9h-3V10.5h-5.3V8h13.5L51.4,10.5L51.4,10.5z"></path>
+                            <path
+                                d="M63.7,26.4h-2.6l-0.2-2h-0.1c-0.9,1.6-2.3,2.3-4.2,2.3c-1.3,0-2.4-0.4-3.1-1.2c-0.9-1-1.4-2.5-1.4-4.5v-7.8h3v7.3 c0,2.6,0.9,3.8,2.6,3.8c1.3,0,2.2-0.6,2.7-1.9c0.1-0.3,0.2-0.7,0.2-1.1v-8.1h3v9.5C63.6,23.9,63.6,25.1,63.7,26.4z">
+                            </path>
+                            <path
+                                d="M79.3,26.4h-3v-7.6c0-2.4-0.9-3.5-2.7-3.5c-0.9,0-1.6,0.3-2.1,1c-0.5,0.6-0.8,1.4-0.8,2.3v7.9h-3v-9.5c0-1.2,0-2.4-0.1-3.8 h2.6l0.1,2.1h0.1c0.3-0.6,0.9-1.2,1.5-1.6c0.8-0.5,1.7-0.7,2.7-0.7c1.2,0,2.3,0.4,3.1,1.2c1,1,1.5,2.5,1.5,4.4L79.3,26.4L79.3,26.4 z">
+                            </path>
+                            <path
+                                d="M94.3,19.2c0,0.5,0,1-0.1,1.3h-8.9c0,1.3,0.5,2.3,1.3,3c0.7,0.6,1.7,0.9,2.9,0.9c1.3,0,2.5-0.2,3.6-0.6l0.5,2 c-1.3,0.5-2.7,0.8-4.5,0.8c-2.1,0-3.7-0.6-4.9-1.8c-1.2-1.2-1.8-2.8-1.8-4.9c0-2,0.5-3.7,1.6-5c1.2-1.4,2.7-2.1,4.7-2.1 c1.9,0,3.4,0.7,4.3,2.1C93.9,16.1,94.3,17.5,94.3,19.2z M91.5,18.4c0-0.9-0.2-1.6-0.6-2.3c-0.5-0.8-1.3-1.2-2.4-1.2 c-1,0-1.8,0.4-2.4,1.2c-0.5,0.6-0.8,1.4-0.9,2.3L91.5,18.4L91.5,18.4L91.5,18.4z">
+                            </path>
+                            <path
+                                d="M105.8,22.6c0,1.2-0.5,2.2-1.4,3c-0.9,0.7-2.2,1.1-3.8,1.1c-1.5,0-2.8-0.3-3.9-0.9l0.6-2.2c1,0.6,2.1,0.9,3.3,0.9 c1.5,0,2.3-0.6,2.3-1.7c0-0.5-0.2-0.9-0.5-1.2c-0.3-0.3-0.9-0.6-1.8-0.9c-2.4-0.9-3.6-2.2-3.6-3.8c0-1.2,0.4-2.1,1.3-2.9 c0.9-0.8,2-1.1,3.5-1.1c1.3,0,2.4,0.3,3.4,0.8l-0.6,2.1c-0.9-0.5-1.8-0.8-2.7-0.8c-0.6,0-1.1,0.1-1.4,0.4c-0.3,0.3-0.5,0.7-0.5,1.1 c0,0.5,0.2,0.8,0.5,1.1c0.3,0.3,0.9,0.6,1.8,0.9C104.6,19.5,105.8,20.8,105.8,22.6z">
+                            </path>
+                        </g>
+                    </svg></a> <a href="#" target="_blank" class="gplay"><svg version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewbox="0 0 125.7 21" style="enable-background:new 0 0 125.7 21;" xml:space="preserve">
+                        <g id="google_play_buuton_1_">
+                            <g id="Layer_1_xA0_Image_1_">
+                                <image style="overflow:visible;" width="20" height="21" id="Layer_1_xA0_Image"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsSAAALEgHS3X78AAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqFJREFUeNqklctrGlEUxs9MxihB 8xAMImqiZBMJKvgnWLLOwo1WrIUUEqOE0oZSKCWL7loKhW6SbkJWpVkVum2h0JVgoUiCFKFUReob 3xKN03MuGZlYTdLkwEXvdeZ3v3vOd66c2+0+WVhYsIqi+PHs7Oz+4eFhC24R3OrqqjgxMQFWqxWm p6e71Wr1LYIf7+3t9W8C5BUKBRAwk8lAt9tVIPih2Wyu7ezsPLqRwrW1NZHjOKBB4OXlZdDr9TA5 OQn1er2IikO7u7tH1wZ6PB6R53mQQ202GxgMBlAqlQxcKpV+1Wq1AKr+diXQ5/MNFEqDNlhZWQGT ycSANARBgHw+/x1Ve0Oh0M+xwEAgIEqQYajD4QDMJwPSnKLf74uNRuMzgYPBYHFkUegF+pQPUpRI JEgV22DwAs9zGo3mDn7N7u/vfzo4ONBfULixsSHKVQ0fn3LqdDpZoSjQr1AoFNim5/N+q9U6UqlU D7xeb52LRCJjgfK5y+WCmZkZKBaL7ETDgd7tdjqdlwLtdJlCaT0ej8Ps7CwsLi6ONjTPK3A8vQC8 DNrr9QA9CalUaiS02Wzm8Zn1kQrPdxys4cMsdxSVSoWtWSwWNsf8NbHyzzAVb7a3t8V/FA6rLJfL DCbZhgKNTmvNubm5F2j4V+FwuCf9NvLIrPz4PZfLsaPKYVj1Plb0A9pqHT3cHD66IJVfrooinU7D 6enpAEb2UavVX7Ra7V3slD/jOkUgAw/DkskkoAXYOg281n7Mz8/7tra2Tq7qZYE8Je+E4+NjaLfb rFMwR7+NRuM9VPT1urcNUygBY7EYg+l0utLS0lJ4c3Pz/f/ehyyHVMVoNApTU1MtvBCe4xFf+/1+ 8SYXLAFPstms2W63v8OEP8F+7N7mP+WvAAMA7kkBKNdDLuIAAAAASUVORK5CYII=">
+                                </image>
+                            </g>
+                            <path class="st0"
+                                d="M68.4,19.8c-0.6-0.5-1.1-1.3-1.3-1.8l1.9-0.8c0.1,0.2,0.4,0.6,0.6,1c0.5,0.5,1.2,1,1.9,1c0.7,0,1.5-0.4,2-1 c0.4-0.6,0.6-1.2,0.6-2v-0.7c-1.4,1.8-4.4,1.5-6.1-0.4c-1.8-1.9-1.8-5.1,0-7c1.8-1.8,4.4-2,5.9-0.4l0,0V6.9h2v8.9 c0,2.3-0.8,3.6-1.9,4.4c-0.7,0.6-1.8,0.8-2.7,0.8C70.3,20.9,69.2,20.5,68.4,19.8L68.4,19.8z M118.2,20.3L118.2,20.3l2-4.8l-3.6-8.2 h2l2.5,5.8l2.5-5.8h2l-5.5,13H118.2L118.2,20.3z M108.5,15.8L108.5,15.8c-0.6-0.6-0.8-1.4-0.8-2.3c0-0.7,0.2-1.4,0.7-1.9 c0.8-0.8,2-1.2,3.3-1.2c0.8,0,1.5,0.1,2.1,0.5c0-1.4-1.2-2-2.1-2c-0.8,0-1.7,0.5-2,1.3L108,9.5c0.4-0.8,1.3-2.4,3.7-2.4 c1.2,0,2.4,0.4,3.1,1.2c0.7,0.8,1,1.8,1,3.1v5h-2v-0.8c-0.2,0.4-0.7,0.6-1.1,0.8c-0.5,0.2-1.1,0.4-1.7,0.4 C110.2,16.6,109.1,16.4,108.5,15.8L108.5,15.8z M45.2,11.5L45.2,11.5c0-2.4,1.8-5,5-5c3.1,0,5,2.6,5,5s-1.8,5-5,5 C47,16.5,45.2,13.9,45.2,11.5L45.2,11.5z M55.9,11.5L55.9,11.5c0-2.4,1.8-5,5-5c3.1,0,5,2.6,5,5s-1.8,5-5,5 C57.8,16.5,55.9,13.9,55.9,11.5L55.9,11.5z M31.7,14.1L31.7,14.1c-3-3-2.9-7.8,0.1-10.9c1.5-1.5,3.4-2.3,5.5-2.3 c1.9,0,3.8,0.7,5.2,2.1l-1.4,1.5c-2.1-2.1-5.6-2-7.6,0.1c-2.1,2.3-2.1,5.7,0,8c2.1,2.3,5.7,2.4,7.8,0.1c0.7-0.7,1-1.7,1.1-2.6h-5V8 h7c0.1,0.5,0.1,1.1,0.1,1.7c0,1.8-0.7,3.6-1.9,4.8c-1.3,1.3-3.2,2-5.1,2C35.4,16.4,33.3,15.6,31.7,14.1L31.7,14.1z M82,14.9 L82,14.9c-1.8-1.9-1.8-5.1,0-7.1c1.8-1.9,4.8-1.9,6.4,0c0.6,0.6,1,1.4,1.3,2.3l-6.5,2.7c0.4,0.8,1.2,1.5,2.4,1.5 c1.1,0,1.8-0.4,2.5-1.4l1.8,1.2l0,0c-0.2,0.2-0.5,0.5-0.6,0.7C87.3,16.8,83.8,16.8,82,14.9L82,14.9z M94.4,16.4L94.4,16.4V3.2h4.3 c2.5,0,4.5,1.8,4.5,3.9c0,2.1-1.8,3.9-4,3.9h-2.6v5.2h-2.1V16.4z M104.4,16.4L104.4,16.4V3.2h2v13.2H104.4L104.4,16.4z M77.5,16.1 L77.5,16.1V1.4h2.1v14.7H77.5L77.5,16.1z M113.8,12.4L113.8,12.4c-0.5-0.4-1.2-0.5-1.9-0.5c-1.4,0-2.3,0.7-2.3,1.5 c0,0.8,0.8,1.3,1.7,1.3C112.5,14.8,113.8,13.9,113.8,12.4L113.8,12.4z M52.9,11.5L52.9,11.5c0-1.4-1-3-2.7-3c-1.8,0-2.7,1.5-2.7,3 s1,3,2.7,3C51.8,14.5,52.9,12.9,52.9,11.5L52.9,11.5z M63.6,11.5L63.6,11.5c0-1.4-1-3-2.7-3s-2.7,1.5-2.7,3s1,3,2.7,3 S63.6,12.9,63.6,11.5L63.6,11.5z M74.2,12.3L74.2,12.3c0-0.1,0-0.2,0.1-0.4l0,0c0-0.1,0-0.4,0-0.5c0-0.1,0-0.4,0-0.5v-0.1 c0-0.1-0.1-0.4-0.1-0.5c-0.4-1.2-1.4-2-2.5-2c-1.4,0-2.6,1.4-2.6,3c0,1.7,1.2,3,2.7,3C72.8,14.5,73.7,13.6,74.2,12.3L74.2,12.3z M82.9,11.3L82.9,11.3l4.4-1.9c-0.5-0.8-1.2-1.1-1.8-1.1C83.7,8.4,82.6,10.3,82.9,11.3L82.9,11.3z M101.1,7.2L101.1,7.2 c0-1.2-1-2-2.3-2h-2.4v4.2h2.5C100.1,9.3,101.1,8.4,101.1,7.2z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.6,17.9 119.6,17.9 119.6,17.8 119.6,17.8 119.7,17.8 119.7,17.8 119.6,17.8 119.6,17.8 119.6,17.9 119.6,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9 L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9z M119.7,17.8L119.7,17.8L119.7,17.8 L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9 L119.7,17.9z M119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9 119.7,17.9 119.7,17.8">
+                            </polygon>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9 L119.7,17.9z M119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9z">
+                            </path>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9z M119.8,17.8L119.8,17.8L119.8,17.8 L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8z M119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9 L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.9 119.8,17.9">
+                            </polygon>
+                            <polygon class="st0" points="119.8,17.9 119.8,17.9 119.8,17.8 119.8,17.8 119.8,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9 L119.8,17.9L119.8,17.9L119.8,17.9z M119.8,17.8L119.8,17.8C119.8,17.9,119.8,17.9,119.8,17.8C119.8,17.9,119.8,17.9,119.8,17.8 L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8z">
+                            </path>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9z">
+                            </path>
+                            <path class="st0"
+                                d="M120,17.9L120,17.9C120,17.8,120,17.8,120,17.9C119.8,17.8,119.8,17.8,120,17.9L120,17.9 C119.8,17.9,119.8,17.9,120,17.9L120,17.9L120,17.9z M120,17.8L120,17.8C120,17.9,120,17.9,120,17.8C120,17.9,119.8,17.9,120,17.8 L120,17.8C119.8,17.8,120,17.8,120,17.8L120,17.8L120,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="120,17.9 120,17.8 120,17.8 120,17.8 120,17.8 120,17.8 120,17.9 120,17.9 120,17.8 120,17.8 120,17.9 120,17.9 120,17.8 120,17.8">
+                            </polygon>
+                            <path class="st0"
+                                d="M120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9z M120,17.8 L120,17.8L120,17.8L120,17.8L120,17.8L120,17.8L120,17.8z">
+                            </path>
+                            <path class="st0"
+                                d="M120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9 C120,17.8,120,17.8,120,17.9L120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9 C120,17.8,120,17.8,120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9z">
+                            </path>
+                            <polygon class="st0"
+                                points="120.1,17.8 120,17.8 120,17.8 120.1,17.8 120.1,17.9 120.1,17.9 120.1,17.8">
+                            </polygon>
+                            <polygon class="st0"
+                                points="120.1,17.9 120.1,17.9 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M120.1,17.9L120.1,17.9C120.1,17.8,120.1,17.8,120.1,17.9L120.1,17.9C120.1,17.8,120.1,17.8,120.1,17.9 L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9z M120.1,17.8L120.1,17.8L120.1,17.8 L120.1,17.8L120.1,17.8L120.1,17.8L120.1,17.8L120.1,17.8z">
+                            </path>
+                        </g>
+                    </svg></a></div>
+        </div>
+        <div class="b_artist_play"><svg version="1.1" id="svg_play_btn" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 56 65"
+                style="enable-background:new 0 0 56 65;" xml:space="preserve">
+                <path class="st0" d="M0,0v65l56-32.5L0,0z M6,10.4l38,22.1L6,54.6V10.4z"></path>
+            </svg>
+            <div>play video</div>
+        </div>
+    </div>
+    <div class="b_artist b_artist_4">
+        <div class="b_artist_video_controls_inset"><svg version="1.1" id="svg_dots_inset"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewbox="0 0 292 292" style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_video_controls_outset"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_video_controls_outset2"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_data">
+            <div class="artists-counter"><span>4</span>
+                <div></div><span>5</span>
+            </div>
+            <div class="b_artist_name"></div>
+            <div class="b_artist_from"></div>
+            <div class="b_artist_itunes"><a href="#" target="_blank" class="itunes"><svg version="1.1" id="svg_itunes"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewbox="0 0 108 28" style="enable-background:new 0 0 108 28;" xml:space="preserve">
+                        <path id="apple_part_2"
+                            d="M18.8,14.7c0-3.2,2.6-4.8,2.8-4.9c-1.5-2.2-3.9-2.5-4.7-2.5c-2-0.2-3.9,1.2-4.9,1.2c-1,0-2.6-1.2-4.2-1.1c-2.1,0-4.2,1.3-5.3,3.2c-2.3,3.9-0.6,9.7,1.6,12.8c1.1,1.6,2.4,3.3,4,3.2c1.6-0.1,2.2-1,4.2-1c1.9,0,2.5,1,4.2,1c1.8,0,2.9-1.6,3.9-3.1c1.3-1.8,1.8-3.5,1.8-3.6C22.2,19.9,18.9,18.6,18.8,14.7z">
+                        </path>
+                        <path id="apple_part_1"
+                            d="M15.6,5.3c0.9-1.1,1.5-2.6,1.3-4.1c-1.3,0.1-2.9,0.9-3.8,1.9c-0.8,0.9-1.5,2.5-1.3,3.9C13.2,7.2,14.7,6.4,15.6,5.3z">
+                        </path>
+                        <g id="itunes_text">
+                            <path
+                                d="M35.8,9.2c0,0.5-0.2,1-0.5,1.3C35,10.8,34.5,11,34,11c-0.5,0-0.9-0.2-1.2-0.5c-0.3-0.3-0.5-0.8-0.5-1.3 c0-0.5,0.2-0.9,0.5-1.3c0.3-0.3,0.8-0.5,1.3-0.5c0.5,0,0.9,0.2,1.3,0.5C35.7,8.3,35.8,8.7,35.8,9.2z M35.5,26.4h-3V13.2h3V26.4z">
+                            </path>
+                            <path d="M51.4,10.5h-5.3v15.9h-3V10.5h-5.3V8h13.5L51.4,10.5L51.4,10.5z"></path>
+                            <path
+                                d="M63.7,26.4h-2.6l-0.2-2h-0.1c-0.9,1.6-2.3,2.3-4.2,2.3c-1.3,0-2.4-0.4-3.1-1.2c-0.9-1-1.4-2.5-1.4-4.5v-7.8h3v7.3 c0,2.6,0.9,3.8,2.6,3.8c1.3,0,2.2-0.6,2.7-1.9c0.1-0.3,0.2-0.7,0.2-1.1v-8.1h3v9.5C63.6,23.9,63.6,25.1,63.7,26.4z">
+                            </path>
+                            <path
+                                d="M79.3,26.4h-3v-7.6c0-2.4-0.9-3.5-2.7-3.5c-0.9,0-1.6,0.3-2.1,1c-0.5,0.6-0.8,1.4-0.8,2.3v7.9h-3v-9.5c0-1.2,0-2.4-0.1-3.8 h2.6l0.1,2.1h0.1c0.3-0.6,0.9-1.2,1.5-1.6c0.8-0.5,1.7-0.7,2.7-0.7c1.2,0,2.3,0.4,3.1,1.2c1,1,1.5,2.5,1.5,4.4L79.3,26.4L79.3,26.4 z">
+                            </path>
+                            <path
+                                d="M94.3,19.2c0,0.5,0,1-0.1,1.3h-8.9c0,1.3,0.5,2.3,1.3,3c0.7,0.6,1.7,0.9,2.9,0.9c1.3,0,2.5-0.2,3.6-0.6l0.5,2 c-1.3,0.5-2.7,0.8-4.5,0.8c-2.1,0-3.7-0.6-4.9-1.8c-1.2-1.2-1.8-2.8-1.8-4.9c0-2,0.5-3.7,1.6-5c1.2-1.4,2.7-2.1,4.7-2.1 c1.9,0,3.4,0.7,4.3,2.1C93.9,16.1,94.3,17.5,94.3,19.2z M91.5,18.4c0-0.9-0.2-1.6-0.6-2.3c-0.5-0.8-1.3-1.2-2.4-1.2 c-1,0-1.8,0.4-2.4,1.2c-0.5,0.6-0.8,1.4-0.9,2.3L91.5,18.4L91.5,18.4L91.5,18.4z">
+                            </path>
+                            <path
+                                d="M105.8,22.6c0,1.2-0.5,2.2-1.4,3c-0.9,0.7-2.2,1.1-3.8,1.1c-1.5,0-2.8-0.3-3.9-0.9l0.6-2.2c1,0.6,2.1,0.9,3.3,0.9 c1.5,0,2.3-0.6,2.3-1.7c0-0.5-0.2-0.9-0.5-1.2c-0.3-0.3-0.9-0.6-1.8-0.9c-2.4-0.9-3.6-2.2-3.6-3.8c0-1.2,0.4-2.1,1.3-2.9 c0.9-0.8,2-1.1,3.5-1.1c1.3,0,2.4,0.3,3.4,0.8l-0.6,2.1c-0.9-0.5-1.8-0.8-2.7-0.8c-0.6,0-1.1,0.1-1.4,0.4c-0.3,0.3-0.5,0.7-0.5,1.1 c0,0.5,0.2,0.8,0.5,1.1c0.3,0.3,0.9,0.6,1.8,0.9C104.6,19.5,105.8,20.8,105.8,22.6z">
+                            </path>
+                        </g>
+                    </svg></a> <a href="#" target="_blank" class="gplay"><svg version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewbox="0 0 125.7 21" style="enable-background:new 0 0 125.7 21;" xml:space="preserve">
+                        <g id="google_play_buuton_1_">
+                            <g id="Layer_1_xA0_Image_1_">
+                                <image style="overflow:visible;" width="20" height="21" id="Layer_1_xA0_Image"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsSAAALEgHS3X78AAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqFJREFUeNqklctrGlEUxs9MxihB 8xAMImqiZBMJKvgnWLLOwo1WrIUUEqOE0oZSKCWL7loKhW6SbkJWpVkVum2h0JVgoUiCFKFUReob 3xKN03MuGZlYTdLkwEXvdeZ3v3vOd66c2+0+WVhYsIqi+PHs7Oz+4eFhC24R3OrqqjgxMQFWqxWm p6e71Wr1LYIf7+3t9W8C5BUKBRAwk8lAt9tVIPih2Wyu7ezsPLqRwrW1NZHjOKBB4OXlZdDr9TA5 OQn1er2IikO7u7tH1wZ6PB6R53mQQ202GxgMBlAqlQxcKpV+1Wq1AKr+diXQ5/MNFEqDNlhZWQGT ycSANARBgHw+/x1Ve0Oh0M+xwEAgIEqQYajD4QDMJwPSnKLf74uNRuMzgYPBYHFkUegF+pQPUpRI JEgV22DwAs9zGo3mDn7N7u/vfzo4ONBfULixsSHKVQ0fn3LqdDpZoSjQr1AoFNim5/N+q9U6UqlU D7xeb52LRCJjgfK5y+WCmZkZKBaL7ETDgd7tdjqdlwLtdJlCaT0ej8Ps7CwsLi6ONjTPK3A8vQC8 DNrr9QA9CalUaiS02Wzm8Zn1kQrPdxys4cMsdxSVSoWtWSwWNsf8NbHyzzAVb7a3t8V/FA6rLJfL DCbZhgKNTmvNubm5F2j4V+FwuCf9NvLIrPz4PZfLsaPKYVj1Plb0A9pqHT3cHD66IJVfrooinU7D 6enpAEb2UavVX7Ra7V3slD/jOkUgAw/DkskkoAXYOg281n7Mz8/7tra2Tq7qZYE8Je+E4+NjaLfb rFMwR7+NRuM9VPT1urcNUygBY7EYg+l0utLS0lJ4c3Pz/f/ehyyHVMVoNApTU1MtvBCe4xFf+/1+ 8SYXLAFPstms2W63v8OEP8F+7N7mP+WvAAMA7kkBKNdDLuIAAAAASUVORK5CYII=">
+                                </image>
+                            </g>
+                            <path class="st0"
+                                d="M68.4,19.8c-0.6-0.5-1.1-1.3-1.3-1.8l1.9-0.8c0.1,0.2,0.4,0.6,0.6,1c0.5,0.5,1.2,1,1.9,1c0.7,0,1.5-0.4,2-1 c0.4-0.6,0.6-1.2,0.6-2v-0.7c-1.4,1.8-4.4,1.5-6.1-0.4c-1.8-1.9-1.8-5.1,0-7c1.8-1.8,4.4-2,5.9-0.4l0,0V6.9h2v8.9 c0,2.3-0.8,3.6-1.9,4.4c-0.7,0.6-1.8,0.8-2.7,0.8C70.3,20.9,69.2,20.5,68.4,19.8L68.4,19.8z M118.2,20.3L118.2,20.3l2-4.8l-3.6-8.2 h2l2.5,5.8l2.5-5.8h2l-5.5,13H118.2L118.2,20.3z M108.5,15.8L108.5,15.8c-0.6-0.6-0.8-1.4-0.8-2.3c0-0.7,0.2-1.4,0.7-1.9 c0.8-0.8,2-1.2,3.3-1.2c0.8,0,1.5,0.1,2.1,0.5c0-1.4-1.2-2-2.1-2c-0.8,0-1.7,0.5-2,1.3L108,9.5c0.4-0.8,1.3-2.4,3.7-2.4 c1.2,0,2.4,0.4,3.1,1.2c0.7,0.8,1,1.8,1,3.1v5h-2v-0.8c-0.2,0.4-0.7,0.6-1.1,0.8c-0.5,0.2-1.1,0.4-1.7,0.4 C110.2,16.6,109.1,16.4,108.5,15.8L108.5,15.8z M45.2,11.5L45.2,11.5c0-2.4,1.8-5,5-5c3.1,0,5,2.6,5,5s-1.8,5-5,5 C47,16.5,45.2,13.9,45.2,11.5L45.2,11.5z M55.9,11.5L55.9,11.5c0-2.4,1.8-5,5-5c3.1,0,5,2.6,5,5s-1.8,5-5,5 C57.8,16.5,55.9,13.9,55.9,11.5L55.9,11.5z M31.7,14.1L31.7,14.1c-3-3-2.9-7.8,0.1-10.9c1.5-1.5,3.4-2.3,5.5-2.3 c1.9,0,3.8,0.7,5.2,2.1l-1.4,1.5c-2.1-2.1-5.6-2-7.6,0.1c-2.1,2.3-2.1,5.7,0,8c2.1,2.3,5.7,2.4,7.8,0.1c0.7-0.7,1-1.7,1.1-2.6h-5V8 h7c0.1,0.5,0.1,1.1,0.1,1.7c0,1.8-0.7,3.6-1.9,4.8c-1.3,1.3-3.2,2-5.1,2C35.4,16.4,33.3,15.6,31.7,14.1L31.7,14.1z M82,14.9 L82,14.9c-1.8-1.9-1.8-5.1,0-7.1c1.8-1.9,4.8-1.9,6.4,0c0.6,0.6,1,1.4,1.3,2.3l-6.5,2.7c0.4,0.8,1.2,1.5,2.4,1.5 c1.1,0,1.8-0.4,2.5-1.4l1.8,1.2l0,0c-0.2,0.2-0.5,0.5-0.6,0.7C87.3,16.8,83.8,16.8,82,14.9L82,14.9z M94.4,16.4L94.4,16.4V3.2h4.3 c2.5,0,4.5,1.8,4.5,3.9c0,2.1-1.8,3.9-4,3.9h-2.6v5.2h-2.1V16.4z M104.4,16.4L104.4,16.4V3.2h2v13.2H104.4L104.4,16.4z M77.5,16.1 L77.5,16.1V1.4h2.1v14.7H77.5L77.5,16.1z M113.8,12.4L113.8,12.4c-0.5-0.4-1.2-0.5-1.9-0.5c-1.4,0-2.3,0.7-2.3,1.5 c0,0.8,0.8,1.3,1.7,1.3C112.5,14.8,113.8,13.9,113.8,12.4L113.8,12.4z M52.9,11.5L52.9,11.5c0-1.4-1-3-2.7-3c-1.8,0-2.7,1.5-2.7,3 s1,3,2.7,3C51.8,14.5,52.9,12.9,52.9,11.5L52.9,11.5z M63.6,11.5L63.6,11.5c0-1.4-1-3-2.7-3s-2.7,1.5-2.7,3s1,3,2.7,3 S63.6,12.9,63.6,11.5L63.6,11.5z M74.2,12.3L74.2,12.3c0-0.1,0-0.2,0.1-0.4l0,0c0-0.1,0-0.4,0-0.5c0-0.1,0-0.4,0-0.5v-0.1 c0-0.1-0.1-0.4-0.1-0.5c-0.4-1.2-1.4-2-2.5-2c-1.4,0-2.6,1.4-2.6,3c0,1.7,1.2,3,2.7,3C72.8,14.5,73.7,13.6,74.2,12.3L74.2,12.3z M82.9,11.3L82.9,11.3l4.4-1.9c-0.5-0.8-1.2-1.1-1.8-1.1C83.7,8.4,82.6,10.3,82.9,11.3L82.9,11.3z M101.1,7.2L101.1,7.2 c0-1.2-1-2-2.3-2h-2.4v4.2h2.5C100.1,9.3,101.1,8.4,101.1,7.2z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.6,17.9 119.6,17.9 119.6,17.8 119.6,17.8 119.7,17.8 119.7,17.8 119.6,17.8 119.6,17.8 119.6,17.9 119.6,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9 L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9z M119.7,17.8L119.7,17.8L119.7,17.8 L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9 L119.7,17.9z M119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9 119.7,17.9 119.7,17.8">
+                            </polygon>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9 L119.7,17.9z M119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9z">
+                            </path>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9z M119.8,17.8L119.8,17.8L119.8,17.8 L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8z M119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9 L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.9 119.8,17.9">
+                            </polygon>
+                            <polygon class="st0" points="119.8,17.9 119.8,17.9 119.8,17.8 119.8,17.8 119.8,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9 L119.8,17.9L119.8,17.9L119.8,17.9z M119.8,17.8L119.8,17.8C119.8,17.9,119.8,17.9,119.8,17.8C119.8,17.9,119.8,17.9,119.8,17.8 L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8z">
+                            </path>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9z">
+                            </path>
+                            <path class="st0"
+                                d="M120,17.9L120,17.9C120,17.8,120,17.8,120,17.9C119.8,17.8,119.8,17.8,120,17.9L120,17.9 C119.8,17.9,119.8,17.9,120,17.9L120,17.9L120,17.9z M120,17.8L120,17.8C120,17.9,120,17.9,120,17.8C120,17.9,119.8,17.9,120,17.8 L120,17.8C119.8,17.8,120,17.8,120,17.8L120,17.8L120,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="120,17.9 120,17.8 120,17.8 120,17.8 120,17.8 120,17.8 120,17.9 120,17.9 120,17.8 120,17.8 120,17.9 120,17.9 120,17.8 120,17.8">
+                            </polygon>
+                            <path class="st0"
+                                d="M120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9z M120,17.8 L120,17.8L120,17.8L120,17.8L120,17.8L120,17.8L120,17.8z">
+                            </path>
+                            <path class="st0"
+                                d="M120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9 C120,17.8,120,17.8,120,17.9L120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9 C120,17.8,120,17.8,120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9z">
+                            </path>
+                            <polygon class="st0"
+                                points="120.1,17.8 120,17.8 120,17.8 120.1,17.8 120.1,17.9 120.1,17.9 120.1,17.8">
+                            </polygon>
+                            <polygon class="st0"
+                                points="120.1,17.9 120.1,17.9 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M120.1,17.9L120.1,17.9C120.1,17.8,120.1,17.8,120.1,17.9L120.1,17.9C120.1,17.8,120.1,17.8,120.1,17.9 L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9z M120.1,17.8L120.1,17.8L120.1,17.8 L120.1,17.8L120.1,17.8L120.1,17.8L120.1,17.8L120.1,17.8z">
+                            </path>
+                        </g>
+                    </svg></a></div>
+        </div>
+        <div class="b_artist_play">
+            <div>&nbsp;</div>
+        </div>
+    </div>
+    <div class="b_artist b_artist_5">
+        <div class="b_artist_video_controls_inset"><svg version="1.1" id="svg_dots_inset"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewbox="0 0 292 292" style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_video_controls_outset"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_video_controls_outset2"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 292 292"
+                style="enable-background:new 0 0 292 292;" xml:space="preserve">
+                <path d="M290,146c0,80.1-63.9,145-144,145S1,226.1,1,146S65.9,1,146,1S290,65.9,290,146z"></path>
+            </svg></div>
+        <div class="b_artist_data">
+            <div class="artists-counter"><span>5</span>
+                <div></div><span>5</span>
+            </div>
+            <div class="b_artist_name"></div>
+            <div class="b_artist_from"></div>
+            <div class="b_artist_itunes"><a href="#" target="_blank" class="itunes"><svg version="1.1" id="svg_itunes"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewbox="0 0 108 28" style="enable-background:new 0 0 108 28;" xml:space="preserve">
+                        <path id="apple_part_2"
+                            d="M18.8,14.7c0-3.2,2.6-4.8,2.8-4.9c-1.5-2.2-3.9-2.5-4.7-2.5c-2-0.2-3.9,1.2-4.9,1.2c-1,0-2.6-1.2-4.2-1.1c-2.1,0-4.2,1.3-5.3,3.2c-2.3,3.9-0.6,9.7,1.6,12.8c1.1,1.6,2.4,3.3,4,3.2c1.6-0.1,2.2-1,4.2-1c1.9,0,2.5,1,4.2,1c1.8,0,2.9-1.6,3.9-3.1c1.3-1.8,1.8-3.5,1.8-3.6C22.2,19.9,18.9,18.6,18.8,14.7z">
+                        </path>
+                        <path id="apple_part_1"
+                            d="M15.6,5.3c0.9-1.1,1.5-2.6,1.3-4.1c-1.3,0.1-2.9,0.9-3.8,1.9c-0.8,0.9-1.5,2.5-1.3,3.9C13.2,7.2,14.7,6.4,15.6,5.3z">
+                        </path>
+                        <g id="itunes_text">
+                            <path
+                                d="M35.8,9.2c0,0.5-0.2,1-0.5,1.3C35,10.8,34.5,11,34,11c-0.5,0-0.9-0.2-1.2-0.5c-0.3-0.3-0.5-0.8-0.5-1.3 c0-0.5,0.2-0.9,0.5-1.3c0.3-0.3,0.8-0.5,1.3-0.5c0.5,0,0.9,0.2,1.3,0.5C35.7,8.3,35.8,8.7,35.8,9.2z M35.5,26.4h-3V13.2h3V26.4z">
+                            </path>
+                            <path d="M51.4,10.5h-5.3v15.9h-3V10.5h-5.3V8h13.5L51.4,10.5L51.4,10.5z"></path>
+                            <path
+                                d="M63.7,26.4h-2.6l-0.2-2h-0.1c-0.9,1.6-2.3,2.3-4.2,2.3c-1.3,0-2.4-0.4-3.1-1.2c-0.9-1-1.4-2.5-1.4-4.5v-7.8h3v7.3 c0,2.6,0.9,3.8,2.6,3.8c1.3,0,2.2-0.6,2.7-1.9c0.1-0.3,0.2-0.7,0.2-1.1v-8.1h3v9.5C63.6,23.9,63.6,25.1,63.7,26.4z">
+                            </path>
+                            <path
+                                d="M79.3,26.4h-3v-7.6c0-2.4-0.9-3.5-2.7-3.5c-0.9,0-1.6,0.3-2.1,1c-0.5,0.6-0.8,1.4-0.8,2.3v7.9h-3v-9.5c0-1.2,0-2.4-0.1-3.8 h2.6l0.1,2.1h0.1c0.3-0.6,0.9-1.2,1.5-1.6c0.8-0.5,1.7-0.7,2.7-0.7c1.2,0,2.3,0.4,3.1,1.2c1,1,1.5,2.5,1.5,4.4L79.3,26.4L79.3,26.4 z">
+                            </path>
+                            <path
+                                d="M94.3,19.2c0,0.5,0,1-0.1,1.3h-8.9c0,1.3,0.5,2.3,1.3,3c0.7,0.6,1.7,0.9,2.9,0.9c1.3,0,2.5-0.2,3.6-0.6l0.5,2 c-1.3,0.5-2.7,0.8-4.5,0.8c-2.1,0-3.7-0.6-4.9-1.8c-1.2-1.2-1.8-2.8-1.8-4.9c0-2,0.5-3.7,1.6-5c1.2-1.4,2.7-2.1,4.7-2.1 c1.9,0,3.4,0.7,4.3,2.1C93.9,16.1,94.3,17.5,94.3,19.2z M91.5,18.4c0-0.9-0.2-1.6-0.6-2.3c-0.5-0.8-1.3-1.2-2.4-1.2 c-1,0-1.8,0.4-2.4,1.2c-0.5,0.6-0.8,1.4-0.9,2.3L91.5,18.4L91.5,18.4L91.5,18.4z">
+                            </path>
+                            <path
+                                d="M105.8,22.6c0,1.2-0.5,2.2-1.4,3c-0.9,0.7-2.2,1.1-3.8,1.1c-1.5,0-2.8-0.3-3.9-0.9l0.6-2.2c1,0.6,2.1,0.9,3.3,0.9 c1.5,0,2.3-0.6,2.3-1.7c0-0.5-0.2-0.9-0.5-1.2c-0.3-0.3-0.9-0.6-1.8-0.9c-2.4-0.9-3.6-2.2-3.6-3.8c0-1.2,0.4-2.1,1.3-2.9 c0.9-0.8,2-1.1,3.5-1.1c1.3,0,2.4,0.3,3.4,0.8l-0.6,2.1c-0.9-0.5-1.8-0.8-2.7-0.8c-0.6,0-1.1,0.1-1.4,0.4c-0.3,0.3-0.5,0.7-0.5,1.1 c0,0.5,0.2,0.8,0.5,1.1c0.3,0.3,0.9,0.6,1.8,0.9C104.6,19.5,105.8,20.8,105.8,22.6z">
+                            </path>
+                        </g>
+                    </svg></a> <a href="#" target="_blank" class="gplay"><svg version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewbox="0 0 125.7 21" style="enable-background:new 0 0 125.7 21;" xml:space="preserve">
+                        <g id="google_play_buuton_1_">
+                            <g id="Layer_1_xA0_Image_1_">
+                                <image style="overflow:visible;" width="20" height="21" id="Layer_1_xA0_Image"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsSAAALEgHS3X78AAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqFJREFUeNqklctrGlEUxs9MxihB 8xAMImqiZBMJKvgnWLLOwo1WrIUUEqOE0oZSKCWL7loKhW6SbkJWpVkVum2h0JVgoUiCFKFUReob 3xKN03MuGZlYTdLkwEXvdeZ3v3vOd66c2+0+WVhYsIqi+PHs7Oz+4eFhC24R3OrqqjgxMQFWqxWm p6e71Wr1LYIf7+3t9W8C5BUKBRAwk8lAt9tVIPih2Wyu7ezsPLqRwrW1NZHjOKBB4OXlZdDr9TA5 OQn1er2IikO7u7tH1wZ6PB6R53mQQ202GxgMBlAqlQxcKpV+1Wq1AKr+diXQ5/MNFEqDNlhZWQGT ycSANARBgHw+/x1Ve0Oh0M+xwEAgIEqQYajD4QDMJwPSnKLf74uNRuMzgYPBYHFkUegF+pQPUpRI JEgV22DwAs9zGo3mDn7N7u/vfzo4ONBfULixsSHKVQ0fn3LqdDpZoSjQr1AoFNim5/N+q9U6UqlU D7xeb52LRCJjgfK5y+WCmZkZKBaL7ETDgd7tdjqdlwLtdJlCaT0ej8Ps7CwsLi6ONjTPK3A8vQC8 DNrr9QA9CalUaiS02Wzm8Zn1kQrPdxys4cMsdxSVSoWtWSwWNsf8NbHyzzAVb7a3t8V/FA6rLJfL DCbZhgKNTmvNubm5F2j4V+FwuCf9NvLIrPz4PZfLsaPKYVj1Plb0A9pqHT3cHD66IJVfrooinU7D 6enpAEb2UavVX7Ra7V3slD/jOkUgAw/DkskkoAXYOg281n7Mz8/7tra2Tq7qZYE8Je+E4+NjaLfb rFMwR7+NRuM9VPT1urcNUygBY7EYg+l0utLS0lJ4c3Pz/f/ehyyHVMVoNApTU1MtvBCe4xFf+/1+ 8SYXLAFPstms2W63v8OEP8F+7N7mP+WvAAMA7kkBKNdDLuIAAAAASUVORK5CYII=">
+                                </image>
+                            </g>
+                            <path class="st0"
+                                d="M68.4,19.8c-0.6-0.5-1.1-1.3-1.3-1.8l1.9-0.8c0.1,0.2,0.4,0.6,0.6,1c0.5,0.5,1.2,1,1.9,1c0.7,0,1.5-0.4,2-1 c0.4-0.6,0.6-1.2,0.6-2v-0.7c-1.4,1.8-4.4,1.5-6.1-0.4c-1.8-1.9-1.8-5.1,0-7c1.8-1.8,4.4-2,5.9-0.4l0,0V6.9h2v8.9 c0,2.3-0.8,3.6-1.9,4.4c-0.7,0.6-1.8,0.8-2.7,0.8C70.3,20.9,69.2,20.5,68.4,19.8L68.4,19.8z M118.2,20.3L118.2,20.3l2-4.8l-3.6-8.2 h2l2.5,5.8l2.5-5.8h2l-5.5,13H118.2L118.2,20.3z M108.5,15.8L108.5,15.8c-0.6-0.6-0.8-1.4-0.8-2.3c0-0.7,0.2-1.4,0.7-1.9 c0.8-0.8,2-1.2,3.3-1.2c0.8,0,1.5,0.1,2.1,0.5c0-1.4-1.2-2-2.1-2c-0.8,0-1.7,0.5-2,1.3L108,9.5c0.4-0.8,1.3-2.4,3.7-2.4 c1.2,0,2.4,0.4,3.1,1.2c0.7,0.8,1,1.8,1,3.1v5h-2v-0.8c-0.2,0.4-0.7,0.6-1.1,0.8c-0.5,0.2-1.1,0.4-1.7,0.4 C110.2,16.6,109.1,16.4,108.5,15.8L108.5,15.8z M45.2,11.5L45.2,11.5c0-2.4,1.8-5,5-5c3.1,0,5,2.6,5,5s-1.8,5-5,5 C47,16.5,45.2,13.9,45.2,11.5L45.2,11.5z M55.9,11.5L55.9,11.5c0-2.4,1.8-5,5-5c3.1,0,5,2.6,5,5s-1.8,5-5,5 C57.8,16.5,55.9,13.9,55.9,11.5L55.9,11.5z M31.7,14.1L31.7,14.1c-3-3-2.9-7.8,0.1-10.9c1.5-1.5,3.4-2.3,5.5-2.3 c1.9,0,3.8,0.7,5.2,2.1l-1.4,1.5c-2.1-2.1-5.6-2-7.6,0.1c-2.1,2.3-2.1,5.7,0,8c2.1,2.3,5.7,2.4,7.8,0.1c0.7-0.7,1-1.7,1.1-2.6h-5V8 h7c0.1,0.5,0.1,1.1,0.1,1.7c0,1.8-0.7,3.6-1.9,4.8c-1.3,1.3-3.2,2-5.1,2C35.4,16.4,33.3,15.6,31.7,14.1L31.7,14.1z M82,14.9 L82,14.9c-1.8-1.9-1.8-5.1,0-7.1c1.8-1.9,4.8-1.9,6.4,0c0.6,0.6,1,1.4,1.3,2.3l-6.5,2.7c0.4,0.8,1.2,1.5,2.4,1.5 c1.1,0,1.8-0.4,2.5-1.4l1.8,1.2l0,0c-0.2,0.2-0.5,0.5-0.6,0.7C87.3,16.8,83.8,16.8,82,14.9L82,14.9z M94.4,16.4L94.4,16.4V3.2h4.3 c2.5,0,4.5,1.8,4.5,3.9c0,2.1-1.8,3.9-4,3.9h-2.6v5.2h-2.1V16.4z M104.4,16.4L104.4,16.4V3.2h2v13.2H104.4L104.4,16.4z M77.5,16.1 L77.5,16.1V1.4h2.1v14.7H77.5L77.5,16.1z M113.8,12.4L113.8,12.4c-0.5-0.4-1.2-0.5-1.9-0.5c-1.4,0-2.3,0.7-2.3,1.5 c0,0.8,0.8,1.3,1.7,1.3C112.5,14.8,113.8,13.9,113.8,12.4L113.8,12.4z M52.9,11.5L52.9,11.5c0-1.4-1-3-2.7-3c-1.8,0-2.7,1.5-2.7,3 s1,3,2.7,3C51.8,14.5,52.9,12.9,52.9,11.5L52.9,11.5z M63.6,11.5L63.6,11.5c0-1.4-1-3-2.7-3s-2.7,1.5-2.7,3s1,3,2.7,3 S63.6,12.9,63.6,11.5L63.6,11.5z M74.2,12.3L74.2,12.3c0-0.1,0-0.2,0.1-0.4l0,0c0-0.1,0-0.4,0-0.5c0-0.1,0-0.4,0-0.5v-0.1 c0-0.1-0.1-0.4-0.1-0.5c-0.4-1.2-1.4-2-2.5-2c-1.4,0-2.6,1.4-2.6,3c0,1.7,1.2,3,2.7,3C72.8,14.5,73.7,13.6,74.2,12.3L74.2,12.3z M82.9,11.3L82.9,11.3l4.4-1.9c-0.5-0.8-1.2-1.1-1.8-1.1C83.7,8.4,82.6,10.3,82.9,11.3L82.9,11.3z M101.1,7.2L101.1,7.2 c0-1.2-1-2-2.3-2h-2.4v4.2h2.5C100.1,9.3,101.1,8.4,101.1,7.2z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.6,17.9 119.6,17.9 119.6,17.8 119.6,17.8 119.7,17.8 119.7,17.8 119.6,17.8 119.6,17.8 119.6,17.9 119.6,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9 L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9z M119.7,17.8L119.7,17.8L119.7,17.8 L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9 L119.7,17.9z M119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8L119.7,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9 119.7,17.9 119.7,17.8">
+                            </polygon>
+                            <polygon class="st0"
+                                points="119.7,17.9 119.7,17.9 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.8 119.7,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9 L119.7,17.9z M119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9L119.7,17.9C119.7,17.8,119.7,17.8,119.7,17.9L119.7,17.9z">
+                            </path>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9z M119.8,17.8L119.8,17.8L119.8,17.8 L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8z M119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9 L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9z">
+                            </path>
+                            <polygon class="st0"
+                                points="119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.8 119.8,17.9 119.8,17.9">
+                            </polygon>
+                            <polygon class="st0" points="119.8,17.9 119.8,17.9 119.8,17.8 119.8,17.8 119.8,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9 L119.8,17.9L119.8,17.9L119.8,17.9z M119.8,17.8L119.8,17.8C119.8,17.9,119.8,17.9,119.8,17.8C119.8,17.9,119.8,17.9,119.8,17.8 L119.8,17.8L119.8,17.8L119.8,17.8L119.8,17.8z">
+                            </path>
+                            <path class="st0"
+                                d="M119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9C119.8,17.8,119.8,17.8,119.8,17.9 C119.8,17.8,119.8,17.8,119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9L119.8,17.9z">
+                            </path>
+                            <path class="st0"
+                                d="M120,17.9L120,17.9C120,17.8,120,17.8,120,17.9C119.8,17.8,119.8,17.8,120,17.9L120,17.9 C119.8,17.9,119.8,17.9,120,17.9L120,17.9L120,17.9z M120,17.8L120,17.8C120,17.9,120,17.9,120,17.8C120,17.9,119.8,17.9,120,17.8 L120,17.8C119.8,17.8,120,17.8,120,17.8L120,17.8L120,17.8z">
+                            </path>
+                            <polygon class="st0"
+                                points="120,17.9 120,17.8 120,17.8 120,17.8 120,17.8 120,17.8 120,17.9 120,17.9 120,17.8 120,17.8 120,17.9 120,17.9 120,17.8 120,17.8">
+                            </polygon>
+                            <path class="st0"
+                                d="M120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9z M120,17.8 L120,17.8L120,17.8L120,17.8L120,17.8L120,17.8L120,17.8z">
+                            </path>
+                            <path class="st0"
+                                d="M120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9 C120,17.8,120,17.8,120,17.9L120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9C120,17.8,120,17.8,120,17.9 C120,17.8,120,17.8,120,17.9L120,17.9L120,17.9L120,17.9L120,17.9L120,17.9z">
+                            </path>
+                            <polygon class="st0"
+                                points="120.1,17.8 120,17.8 120,17.8 120.1,17.8 120.1,17.9 120.1,17.9 120.1,17.8">
+                            </polygon>
+                            <polygon class="st0"
+                                points="120.1,17.9 120.1,17.9 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.8 120.1,17.9">
+                            </polygon>
+                            <path class="st0"
+                                d="M120.1,17.9L120.1,17.9C120.1,17.8,120.1,17.8,120.1,17.9L120.1,17.9C120.1,17.8,120.1,17.8,120.1,17.9 L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9L120.1,17.9z M120.1,17.8L120.1,17.8L120.1,17.8 L120.1,17.8L120.1,17.8L120.1,17.8L120.1,17.8L120.1,17.8z">
+                            </path>
+                        </g>
+                    </svg></a></div>
+        </div>
+        <div class="b_artist_play">
+            <div>&nbsp;</div>
+        </div>
+    </div>
+</div>
+<script src="http://www.youtube.com/player_api" charset="utf-8"></script>

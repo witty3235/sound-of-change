@@ -1,0 +1,51 @@
+{
+  
+    "page_title": "Sound of Change – Supporting Buskers Beyond The Streets",
+    "page_content": "Sound of Change is the new record label, which gives buskers the opportunity to have their music recorded in a studio and listeners the world over, to help them make money beyond the streets.",
+    "page_description": "The music of a busker doesn't leave the confines of a street. Sound of Change makes street music heard by listeners from all over the world. When you buy a song on this site you're tossing the busker a few coins – just like in the street.",
+    
+    "share_description": "Support street musicians wherever you are: sound-of-change.com",
+    
+    "BUTTON_LANG_RU": "РУ",
+    "BUTTON_LANG_EN": "EN",
+    
+    "menu_home": "home",
+    "menu_intro": "intro",
+    "menu_buskers": "buskers",
+    "menu_add-musician": "add musician",
+    "menu_map": "map",
+    "menu_feedback": "feedback",
+    "menu_hd-voice": "hd voice",
+    
+    "SCROLL_DOWN": "SCROLL DOWN",
+    
+    "street_music_label": "street music label",
+    "musicians": "musicians",
+    "all_over": "all over",
+    "the_world": "the world",
+    
+    "become_a_part_of": "Become a part of",
+    "become_a_part_of__str_1": "Music lives not just on expensive labels, but also in the streets.",
+    "become_a_part_of__str_2": "Join the project and help us share the music with listeners from every",
+    "become_a_part_of__str_3": "corner of the world",
+    
+    "form_full-name": "Full name",
+    "form_country": "Country",
+    "form_city": "City",
+    "form_phone-number": "Phone number",
+    "form_options": "Participation options",
+    "form_additional": "Additional information",
+    "join": "JOIN",
+    "done": "Done",
+    
+    "thank_you_for_supporting": "Thank you for supporting",
+    "thank_you_for_supporting_str_1": "Now we will need some time to process your request.",
+    "thank_you_for_supporting_str_2": "We will get in touch with you very soon.",
+    "thank_you_for_supporting_str_3": "Thank you.",
+    
+    "back_to_intro": "BACK TO INTRO",
+    "back_to_musician": "Back to musician videos",
+    
+    "beeline_text": "A big city street, a train car or a subway crossing - the <span>HD voice</span> technology will let you be heard <br/> wherever you are. You and your partner will hear each other as clearly and fully as if you were <br/> nearby. With Beeline you don't have to listen in, you can just listen.",
+    "beeline_btn": "About HD Voice"
+  }
